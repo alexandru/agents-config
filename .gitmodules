@@ -1,0 +1,6 @@
+[submodule "opencode"]
+	path = opencode
+	url = https://github.com/alexandru/opencode-config
+[submodule "copilot"]
+	path = copilot
+	url = https://github.com/alexandru/copilot-cli-config
