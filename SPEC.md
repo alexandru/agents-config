@@ -2,10 +2,10 @@
 
 ## Agents
 
-- Roster: Builder, Planner, Fixer, Explorer, Librarian.
+- Roster: Builder, Planner, Junior, Explorer, Librarian.
 - Default agent: Builder.
 - User-selectable read-only agent: Planner.
-- Subagents: Fixer, Explorer, Librarian.
+- Subagents: Junior, Explorer, Librarian.
 - Harnesses may differ in tool names, permission syntax, cache paths, model names, and invocation.
 - Harnesses must preserve specified roles and boundaries.
 - Enforce restrictions with native permissions when possible.
@@ -30,7 +30,7 @@
 
 - Role: principal engineer and team lead.
 - Owns design, diagnosis, decisions, and substantive changes.
-- May invoke Fixer, Explorer, and Librarian.
+- May invoke Junior, Explorer, and Librarian.
 - Delegates aggressively but retains all reasoning.
 - Reviews and integrates all delegated work.
 - May directly:
@@ -51,23 +51,24 @@
 - May inspect:
   - Project files.
   - Semantic code information.
-- May invoke Explorer and Librarian, but not Fixer.
+- May invoke Explorer and Librarian, but not Junior.
 - Owns plans, reviews, diagnosis, priorities, recommendations, and reasoning.
 - Must not modify workspace files or state.
 - Model: strong reasoning model.
 - Temperature: moderate; `0.5` is a suitable default.
 
-### Fixer
+### Junior
 
-- Role: focused executor for already-chosen work.
+- Role: focused executor and shell-assisted explorer.
 - Must follow applicable `AGENTS.md` files.
-- Implements; does not plan or perform general research.
+- Implements and gathers facts; does not plan or perform general research.
 - May invoke Explorer and Librarian for evidence.
 - Handles:
   - Builds, tests, type checks, linting, and formatting.
   - Predictable command/fix loops.
   - Fully specified refactors and renames.
   - Repetitive edits.
+  - Codebase exploration requiring shell tools unavailable to Explorer.
 - Iterates mechanical loops until green.
 - Stops and returns evidence when work requires:
   - Behavioral or public API decisions.
@@ -125,9 +126,9 @@
 
 ### Delegation graph
 
-- Builder may invoke Fixer, Explorer, and Librarian.
+- Builder may invoke Junior, Explorer, and Librarian.
 - Planner may invoke Explorer and Librarian.
-- Fixer may invoke Explorer and Librarian.
+- Junior may invoke Explorer and Librarian.
 - Explorer has no required subagent dependencies, but may invoke Explorer when supported and useful.
 - Librarian may invoke Explorer or Librarian when supported and useful.
 
