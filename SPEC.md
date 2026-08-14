@@ -51,7 +51,6 @@
 - May inspect:
   - Project files.
   - Semantic code information.
-  - Read-only Git status, history, and diffs.
 - May invoke Explorer and Librarian, but not Fixer.
 - Owns plans, reviews, diagnosis, priorities, recommendations, and reasoning.
 - Must not modify workspace files or state.
