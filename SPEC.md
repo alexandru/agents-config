@@ -61,6 +61,7 @@
 ### Fixer
 
 - Role: focused executor for already-chosen work.
+- Must follow applicable `AGENTS.md` files.
 - Implements; does not plan or perform general research.
 - May invoke Explorer and Librarian for evidence.
 - Handles:
