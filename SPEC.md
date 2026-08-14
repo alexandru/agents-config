@@ -130,3 +130,33 @@
 - Fixer may invoke Explorer and Librarian.
 - Explorer has no required subagent dependencies, but may invoke Explorer when supported and useful.
 - Librarian may invoke Explorer or Librarian when supported and useful.
+
+## Skills
+
+### Shared
+
+- `cellar`
+- `codebase-design`
+- `diagnosing-bugs`
+- `domain-modeling`
+- `grilling`
+- `handoff`
+- `resolving-merge-conflicts`
+- `simplify`
+- `tdd`
+
+## Commands
+
+### OpenCode
+
+- `/grill-me`
+- `/handoff`
+- `/plan`
+- `/review`
+- `/simplify`
+
+### Copilot
+
+- `/grill-me`
+- `/handoff`
+- `/plan-implementation`
