@@ -21,12 +21,10 @@ git submodule update --init --recursive
 
 Each submodule is its own repository.
 
-1. Edit files inside `opencode/` or `copilot/`.
-2. Commit and push inside that submodule.
-3. Return to the repository root and stage the updated submodule pointers:
+The root scripts apply the Git workflow to both submodules and then the parent repository:
 
 ```bash
-git add opencode copilot
-git commit -m "Update submodule pointers"
-git push
+./bin/git-add
+./bin/git-commit "Commit message"
+./bin/git-push
 ```

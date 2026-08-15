@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
+SUBMODULES=(opencode copilot)
+
+for submodule in "${SUBMODULES[@]}"; do
+  git -C "$ROOT/$submodule" add .
+done
+
+git -C "$ROOT" add .
