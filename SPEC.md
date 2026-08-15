@@ -2,10 +2,10 @@
 
 ## Agents
 
-- Roster: Builder, Planner, Junior, Explorer, Librarian.
+- Roster: Builder, Planner, Junior, Explorer, Librarian, SafeShell.
 - Default agent: Builder.
 - User-selectable read-only agent: Planner.
-- Subagents: Junior, Explorer, Librarian.
+- Subagents: Junior, Explorer, Librarian, SafeShell.
 - Harnesses may differ in tool names, permission syntax, cache paths, model names, and invocation.
 - Harnesses must preserve specified roles and boundaries.
 - Enforce restrictions with native permissions when possible.
@@ -124,13 +124,25 @@
 - Model: cheaper and faster.
 - Temperature: low; `0.2` is a suitable default.
 
+### SafeShell
+
+- Role: fast, read-only shell-expression executor.
+- Accepts a task that unambiguously identifies exactly one shell expression.
+- Rejects expressions that are ambiguous or may modify filesystem, process, system, or remote state.
+- Executes an accepted expression verbatim and exactly once.
+- Must not construct, rewrite, retry, or supplement commands.
+- Returns the exit status and a concise summary of relevant output.
+- Model: cheapest fast model capable of reliably evaluating shell expressions.
+- Temperature: low.
+
 ### Delegation graph
 
 - Builder may invoke Junior, Explorer, and Librarian.
-- Planner may invoke Explorer and Librarian.
+- Planner may invoke Explorer, Librarian, and SafeShell.
 - Junior may invoke Explorer and Librarian.
-- Explorer has no required subagent dependencies, but may invoke Explorer when supported and useful.
-- Librarian may invoke Explorer or Librarian when supported and useful.
+- Explorer may invoke SafeShell for exact read-only shell expressions.
+- Librarian may invoke SafeShell when supported and useful.
+- SafeShell must not invoke subagents.
 
 ## Skills
 
