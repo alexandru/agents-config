@@ -2,9 +2,8 @@
 
 ## Agents
 
-- Roster: Builder, Planner, Junior, Explorer, Librarian, SafeShell.
-- Default agent: Builder.
-- User-selectable read-only agent: Planner.
+- Roster: Orchestrator, Junior, Explorer, Librarian, SafeShell.
+- Default agent: Orchestrator.
 - Subagents: Junior, Explorer, Librarian, SafeShell.
 - Harnesses may differ in tool names, permission syntax, cache paths, model names, and invocation.
 - Harnesses must preserve specified roles and boundaries.
@@ -22,15 +21,15 @@
 
 - Delegate aggressively to save time, model cost, and parent context.
 - Delegate tool-heavy work and run independent tasks in parallel when useful.
-- Builder and Planner retain all reasoning and decisions.
+- Orchestrator retains all reasoning and decisions.
 - Subagents gather evidence or execute fully specified work.
 - Delegated tasks should be self-contained, bounded, and verifiable.
 
-### Builder
+### Orchestrator
 
 - Role: principal engineer and team lead.
 - Owns design, diagnosis, decisions, and substantive changes.
-- May invoke Junior, Explorer, and Librarian.
+- May invoke Junior, Explorer, Librarian, and SafeShell.
 - Delegates aggressively but retains all reasoning.
 - Reviews and integrates all delegated work.
 - May directly:
@@ -43,19 +42,6 @@
 - Uses TDD for behavior changes.
 - Model: strong reasoning model.
 - Temperature: low; `0.2` is a suitable default.
-
-### Planner
-
-- Role: conversational, planning, diagnosis, and review peer to Builder.
-- User-invocable and strictly read-only.
-- May inspect:
-  - Project files.
-  - Semantic code information.
-- May invoke Explorer and Librarian, but not Junior.
-- Owns plans, reviews, diagnosis, priorities, recommendations, and reasoning.
-- Must not modify workspace files or state.
-- Model: strong reasoning model.
-- Temperature: moderate; `0.5` is a suitable default.
 
 ### Junior
 
@@ -137,8 +123,7 @@
 
 ### Delegation graph
 
-- Builder may invoke Junior, Explorer, and Librarian.
-- Planner may invoke Explorer, Librarian, and SafeShell.
+- Orchestrator may invoke Junior, Explorer, Librarian, and SafeShell.
 - Junior may invoke Explorer and Librarian.
 - Explorer may invoke SafeShell for exact read-only shell expressions.
 - Librarian may invoke SafeShell when supported and useful.
