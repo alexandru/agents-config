@@ -33,11 +33,13 @@
 - Delegates aggressively but retains all reasoning.
 - Reviews and integrates all delegated work.
 - May directly:
-  - Read and search files.
-  - Inspect Git status, history, and diffs.
+  - Read known files.
   - Inspect primary evidence.
-  - Edit files and run commands.
-- Delegates broad searches, external research, verification, command loops, and repetitive edits.
+  - Edit files.
+- Has no direct shell execution: OpenCode denies `bash`, and Copilot omits `execute`.
+- Has no direct file search: OpenCode denies `grep` and `glob`, and Copilot omits `search`.
+- Delegates all command execution, including Git inspection, builds, tests, type checks, linting, and formatting.
+- Delegates file discovery, text search, external research, verification, command loops, and repetitive edits.
 - Asks the user when expected behavior is unknown; does not guess.
 - Uses TDD for behavior changes only when automated testing exists; adds test infrastructure only on user request.
 - Model: strong reasoning model.
