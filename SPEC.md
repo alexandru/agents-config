@@ -2,9 +2,9 @@
 
 ## Agents
 
-- Roster: Orchestrator, Junior, Explorer, Librarian, SafeShell.
+- Roster: Orchestrator, Junior, Explorer, Librarian.
 - Default agent: Orchestrator.
-- Subagents: Junior, Explorer, Librarian, SafeShell.
+- Subagents: Junior, Explorer, Librarian.
 - Harnesses may differ in tool names, permission syntax, cache paths, model names, and invocation.
 - Harnesses must preserve specified roles and boundaries.
 - Enforce restrictions with native permissions when possible.
@@ -29,7 +29,7 @@
 
 - Role: principal engineer and team lead.
 - Owns design, diagnosis, decisions, and substantive changes.
-- May invoke Junior, Explorer, Librarian, and SafeShell.
+- May invoke Junior, Explorer, and Librarian.
 - Delegates aggressively but retains all reasoning.
 - Reviews and integrates all delegated work.
 - May directly:
@@ -39,7 +39,7 @@
   - Edit files and run commands.
 - Delegates broad searches, external research, verification, command loops, and repetitive edits.
 - Asks the user when expected behavior is unknown; does not guess.
-- Uses TDD for behavior changes.
+- Uses TDD for behavior changes only when automated testing exists; adds test infrastructure only on user request.
 - Model: strong reasoning model.
 - Temperature: low; `0.2` is a suitable default.
 
@@ -85,6 +85,7 @@
   - Semantic code tools.
   - Read-only Git inspection.
   - Safe metadata, archive, bytecode, and binary inspection.
+- May execute shell commands only when confidently read-only; enforce this natively when possible and through the prompt otherwise.
 - Requests should specify thoroughness: quick, medium, or very thorough.
 - Model: cheaper and faster.
 - Temperature: low.
@@ -100,6 +101,7 @@
   - Propose solutions.
   - Evaluate trade-offs.
   - Modify user workspace.
+- Librarian's permissions must be a superset of Explorer's permissions in every harness, including every shell command Explorer may execute.
 - May use network, search, semantic, repository, package-manager, and shell tools.
 - May write only within a harness-specific persistent temporary cache.
 - Verifies and reuses cached material before repeating network work.
@@ -110,24 +112,10 @@
 - Model: cheaper and faster.
 - Temperature: low; `0.2` is a suitable default.
 
-### SafeShell
-
-- Role: fast, read-only shell-expression executor.
-- Accepts a task that unambiguously identifies exactly one shell expression.
-- Rejects expressions that are ambiguous or may modify filesystem, process, system, or remote state.
-- Executes an accepted expression verbatim and exactly once.
-- Must not construct, rewrite, retry, or supplement commands.
-- Returns the exit status and a concise summary of relevant output.
-- Model: cheapest fast model capable of reliably evaluating shell expressions.
-- Temperature: low.
-
 ### Delegation graph
 
-- Orchestrator may invoke Junior, Explorer, Librarian, and SafeShell.
+- Orchestrator may invoke Junior, Explorer, and Librarian.
 - Junior may invoke Explorer and Librarian.
-- Explorer may invoke SafeShell for exact read-only shell expressions.
-- Librarian may invoke SafeShell when supported and useful.
-- SafeShell must not invoke subagents.
 
 ## Skills
 
