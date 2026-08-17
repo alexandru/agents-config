@@ -37,9 +37,10 @@
   - Inspect primary evidence.
   - Edit files.
 - Has no direct shell execution: OpenCode denies `bash`, and Copilot omits `execute`.
-- Has direct file search: OpenCode allows `grep` and `glob`, and Copilot includes `search`.
+- Has no direct file search: OpenCode denies `grep` and `glob`, and Copilot omits `search`.
 - Delegates all command execution, including Git inspection, builds, tests, type checks, linting, and formatting.
-- May delegate broad file discovery and text search; delegates external research, verification, command loops, and repetitive edits.
+- Delegates broad file discovery and text search; delegates external research, verification, command loops, and repetitive edits.
+- Delegates all file discovery and codebase search to Explorer; delegates external research, verification, command loops, and repetitive edits.
 - Asks the user when expected behavior is unknown; does not guess.
 - Uses TDD for behavior changes only when automated testing exists; adds test infrastructure only on user request.
 - Model: strong reasoning model.
