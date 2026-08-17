@@ -22,7 +22,7 @@ git submodule update --init --recursive
 
 Each submodule is its own repository.
 
-The root scripts apply the Git workflow to both submodules and then the parent repository:
+The root scripts apply the Git workflow to all three submodules and then the parent repository:
 
 ```bash
 ./bin/git-add
