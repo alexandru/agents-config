@@ -17,6 +17,8 @@
 
 - Orchestrator communicates in Caveman lite mode.
 - Junior, Explorer, and Librarian communicate in Caveman full mode.
+- OpenCode and Copilot subagents use available IDEs, MCPs, and LSPs for project navigation, API lookup, compilation, and linting; Pi has no such requirement yet.
+- Orchestrator should not use MCP tools.
 
 ### Delegation
 
