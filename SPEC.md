@@ -16,7 +16,6 @@
 ### Shared behavior
 
 - Subagents use available IDEs, MCPs, and LSPs for project navigation, API lookup, compilation, and linting.
-- Orchestrator should not use MCP, LSP, or codebase search tools.
 
 ### Delegation
 
@@ -42,7 +41,7 @@
 - Asks the user when expected behavior is unknown; does not guess.
 - Preserves todo continuity when new work arrives.
 - May directly:
-  - Read known files.
+  - Read files.
   - Inspect primary evidence.
   - Edit files.
 - Delegates all command execution, including Git inspection, builds, tests, type checks, linting, and formatting.
