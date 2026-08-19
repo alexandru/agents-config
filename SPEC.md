@@ -2,11 +2,11 @@
 
 ## Agents
 
-- Roster: Orchestrator, Junior, Explorer, Librarian.
+- Roster: Orchestrator, Solo, Junior, Explorer, Librarian.
 - Default agent: Orchestrator.
+- Primary agents: Orchestrator, Solo.
 - Subagents: Junior, Explorer, Librarian.
 - Harnesses may differ in tool names, permission syntax, cache paths, model names, and invocation.
-- Pi's Orchestrator prompt is `pi/AGENTS.md` and has no frontmatter; align prompt behavior, not OpenCode or Copilot frontmatter.
 - Harnesses must preserve specified roles and boundaries.
 - Enforce restrictions with native permissions when possible.
 - Enforce unsupported restrictions through prompts.
@@ -15,14 +15,15 @@
 
 ### Shared behavior
 
-- Orchestrator communicates in Caveman lite mode.
-- Junior, Explorer, and Librarian communicate in Caveman full mode.
-- OpenCode and Copilot subagents use available IDEs, MCPs, and LSPs for project navigation, API lookup, compilation, and linting; Pi has no such requirement yet.
+- OpenCode and Copilot subagents use available IDEs, MCPs, and LSPs for project navigation, API lookup, compilation, and linting.
 - Orchestrator should not use MCP tools.
 
 ### Delegation
 
+- These requirements apply only to Orchestrator and delegation-capable subagents; Solo never delegates.
 - Delegate aggressively to save time, model cost, and parent context.
+- Plan delegation to optimize quality, elapsed time, and cost.
+- Combine sequential tasks for the same subagent into one delegation when they require no intervening Orchestrator decision.
 - Delegate tool-heavy work and run independent tasks in parallel when useful.
 - Orchestrator retains all reasoning and decisions.
 - Subagents gather evidence or execute fully specified work.
@@ -49,6 +50,16 @@
 - Requires TDD for behavior changes when automated test infrastructure already exists.
 - Model: strong reasoning model.
 - Temperature: low; `0.2` is a suitable default.
+
+### Solo
+
+- Role: principal software engineer working independently.
+- Owns reasoning, design, diagnosis, decisions, and substantive changes.
+- Has no tool restrictions other than delegation; never invokes or delegates to any agent.
+- Asks the user when expected behavior is unknown, inspects primary evidence, and verifies its own changes.
+- Preserves todo continuity, follows applicable `AGENTS.md` files, uses TDD when test infrastructure exists, and reports uncertainty instead of guessing.
+- Model: same model and effort/variant as Orchestrator in each preset.
+- Temperature: `0.5` where supported; Copilot has no per-agent temperature setting.
 
 ### Junior
 
@@ -123,6 +134,7 @@
 
 - Orchestrator may invoke Junior, Explorer, and Librarian.
 - Junior may invoke Explorer and Librarian.
+- Solo invokes no agents.
 
 ## Skills
 
@@ -140,6 +152,8 @@
 - `tdd`
 
 ## Commands
+
+- Commands run with currently selected primary agent and do not override active agent or model.
 
 ### OpenCode
 

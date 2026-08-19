@@ -4,6 +4,3 @@
 [submodule "copilot"]
 	path = copilot
 	url = https://github.com/alexandru/copilot-cli-config
-[submodule "pi"]
-	path = pi
-	url = git@github.com:alexandru/pi-config.git

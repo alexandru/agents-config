@@ -8,7 +8,7 @@ if (( $# == 0 )); then
 fi
 
 ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
-SUBMODULES=(opencode copilot pi)
+SUBMODULES=(opencode copilot)
 MESSAGE="$*"
 
 commit_staged() {
