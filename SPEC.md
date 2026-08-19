@@ -131,13 +131,20 @@
 - `caveman`
 - `cellar`
 - `codebase-design`
+- `code-review`
 - `diagnosing-bugs`
 - `domain-modeling`
+- `grill-with-docs`
 - `grilling`
 - `handoff`
+- `implement`
+- `improve-codebase-architecture`
 - `resolving-merge-conflicts`
+- `setup-matt-pocock-skills`
 - `simplify`
 - `tdd`
+- `to-spec`
+- `to-tickets`
 
 ## Commands
 
@@ -146,10 +153,16 @@
 ### OpenCode
 
 - `/grill-me`
+- `/grill-with-docs`
 - `/handoff`
+- `/implement`
+- `/improve-codebase-architecture`
 - `/plan`
 - `/review`
+- `/setup-matt-pocock-skills`
 - `/simplify`
+- `/to-spec`
+- `/to-tickets`
 
 ### Copilot
 

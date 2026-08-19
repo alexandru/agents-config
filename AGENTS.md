@@ -16,23 +16,31 @@
 - Check status and diffs in the parent repository and all submodules.
 - Never commit or push changes. Leave all work uncommitted for review.
 
-## Shared-change checklist
+## Repository invariants
 
-- For every shared configuration change:
-  - Update `SPEC.md` so it remains the source of truth.
-  - Apply the change to every applicable harness.
-  - Update every affected README and user-facing list.
-  - Verify semantic alignment across all harnesses after accounting for allowed harness-specific differences.
-- When adding or updating a shared skill:
-  - Add it to the official shared skill list in `SPEC.md`.
-  - Install it in each harness with `npx skills add <source> -y --skill <name>` rather than copying files manually.
-  - Add the same `npx skills add` command to each harness's `update-skills` target in its `Makefile`.
-  - Ensure each harness's `skills-lock.json` is updated by the installer.
-  - Update the skill lists in all harness READMEs.
-  - Review the vendored skill files and all resulting diffs.
-- When changing a shared agent prompt:
-  - Update the corresponding behavior in `SPEC.md`.
-  - Summarize behavior in `SPEC.md`; do not copy exact prompt text into it.
-  - Apply the same semantics to OpenCode, Copilot CLI, and Codex.
-  - Preserve deliberate user-authored phrasing unless the user asks for a rewrite.
-  - Preserve only differences required by each harness's capabilities or file format.
+- `SPEC.md` is the source of truth for shared behavior. Shared sections must remain harness-neutral; operational details belong in harness configuration or its README.
+- Every harness has the same configured agent roster, role boundaries, delegation graph, and shared skills unless `SPEC.md` explicitly says otherwise.
+- Shared agent prompts must preserve the same semantics. Differences are limited to native tool names, permissions, paths, models, file formats, and invocation mechanisms.
+- Enforce restrictions natively when supported. Use prompt restrictions only where native enforcement is unavailable.
+- Harness READMEs must use the same shared agent and skill names, ordering, and descriptions. Skills must be grouped under links to the sources used by each Makefile's `update-skills` task. Installation, commands, profiles, and invocation may differ by harness.
+- Shared skills must come from the same source and be installed with `npx skills add`, never copied manually. Each harness must track matching installer commands, lock entries, and vendored skill content.
+- Every installed user-invoked OpenCode skill must have a command wrapper that invokes the skill, plus matching `SPEC.md` and README entries.
+- Root documentation, Makefiles, Git helpers, and `.gitmodules` must include every harness submodule.
+- Source configuration must remain tracked. Generated files, credentials, sessions, logs, caches, and other runtime state must remain ignored.
+- Removed agents, skills, commands, and settings must leave no stale source or generated configuration references.
+
+## Change checklist
+
+- [ ] Update `SPEC.md` for every shared behavior change without adding harness implementation details to shared sections.
+- [ ] Apply shared agent changes to every harness and preserve deliberate user-authored phrasing.
+- [ ] Update every affected README and user-facing list.
+- [ ] For shared skills, update `SPEC.md`, every harness Makefile, every `skills-lock.json`, vendored files, and every README source group and skill list.
+- [ ] Install skills with the recorded `npx skills add <source> -y --skill <name>` command and review all resulting diffs.
+- [ ] Search all harnesses and generated local configuration for stale names and removed settings.
+- [ ] Compare agent permissions and prompts against `SPEC.md`, accounting only for required harness differences.
+
+## Periodic audit
+
+- Run the full change checklist before handing work off, before every configuration release, after harness CLI or skill-installer upgrades, and at least monthly while the repository is actively maintained.
+- During the audit, compare all harness rosters, prompts, permissions, skills, READMEs, Makefiles, lock files, ignore rules, and root integration files.
+- Record or fix every drift. Do not silently preserve accidental differences.
