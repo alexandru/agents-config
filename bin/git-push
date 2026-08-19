@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
-SUBMODULES=(opencode copilot)
+SUBMODULES=(opencode copilot codex)
 
 for submodule in "${SUBMODULES[@]}"; do
   git -C "$ROOT/$submodule" push

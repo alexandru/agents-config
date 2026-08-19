@@ -4,3 +4,6 @@
 [submodule "copilot"]
 	path = copilot
 	url = https://github.com/alexandru/copilot-cli-config
+[submodule "codex"]
+	path = codex
+	url = git@github.com:alexandru/codex-config.git
