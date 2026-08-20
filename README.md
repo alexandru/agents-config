@@ -22,6 +22,20 @@ git submodule update --init --recursive
 
 Three submodules are included; each is its own repository.
 
+Shared third-party skills are installed once for all harnesses under
+`~/.agents/skills`:
+
+```bash
+make install-skills
+```
+
+To reinstall them from their configured upstream sources and check the pinned
+Matt Pocock skill release:
+
+```bash
+make update-skills
+```
+
 The root scripts apply the Git workflow to all submodules and then the parent repository:
 
 ```bash

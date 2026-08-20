@@ -3,27 +3,28 @@
 ## Agents
 
 - Roster: Orchestrator, Junior, Explorer, Librarian.
-- Default agent: Orchestrator.
-- Primary agent: Orchestrator.
+- Default: Orchestrator.
+- Primary: Orchestrator.
 - Subagents: Junior, Explorer, Librarian.
 - Harnesses may differ in tool names, permission syntax, cache paths, model names, and invocation.
-- Harnesses must preserve specified roles and boundaries.
+- Preserve specified roles and boundaries across harnesses.
 - Enforce restrictions with native permissions when possible.
 - Enforce unsupported restrictions through prompts.
-- Disable conflicting built-in agents when possible.
-- Do not invoke built-in substitutes for configured agents.
+- Disable conflicting built-ins when possible.
+- Never invoke built-ins as substitutes for configured agents.
 
 ### Shared behavior
 
-- Subagents use available IDEs, MCPs, and LSPs for project navigation, API lookup, compilation, and linting.
+- Subagents use available IDEs, MCPs, and LSPs for navigation, API lookup, compilation, and linting.
+- All agents communicate tersely, preserve requested evidence and exact technical content, omit filler and progress narration, and prefer clarity over compression when needed.
 
 ### Delegation
 
-- These requirements apply to Orchestrator and delegation-capable subagents.
+- Applies to Orchestrator and delegation-capable subagents.
 - Delegate aggressively to save time, model cost, and parent context.
-- Plan delegation to optimize quality, elapsed time, and cost.
-- Combine sequential tasks for the same subagent into one delegation when they require no intervening Orchestrator decision.
-- Delegate tool-heavy work and run independent tasks in parallel when useful.
+- Plan delegation for quality, elapsed time, and cost.
+- Combine sequential same-subagent tasks needing no intervening Orchestrator decision.
+- Delegate tool-heavy work and parallelize independent tasks when useful.
 - Orchestrator retains all reasoning and decisions.
 - Subagents gather evidence or execute fully specified work.
 - Delegated tasks should be self-contained, bounded, and verifiable.
@@ -33,27 +34,26 @@
 - Role: principal software engineer.
 - Owns design, diagnosis, decisions, and substantive changes.
 - May invoke Junior, Explorer, and Librarian.
-- Delegates aggressively but retains all reasoning.
 - Reviews and integrates all delegated work.
-- Delegates codebase evidence to Explorer, external research to Librarian, and command execution or mechanical work to Junior.
-- Gives subagents self-contained, bounded, and verifiable tasks.
-- Keeps diagnosis, correctness judgments, solution discovery, architecture, trade-offs, and code review in the Orchestrator.
-- Asks the user when expected behavior is unknown; does not guess.
+- Delegates codebase evidence to Explorer, external research to Librarian, and commands or mechanical work to Junior.
+- Retains correctness judgments, solution discovery, architecture, trade-offs, and code review.
+- Asks the user rather than guessing when expected behavior is unknown.
 - Preserves todo continuity when new work arrives.
 - May directly:
   - Read files.
   - Inspect primary evidence.
   - Edit files.
-- Delegates all command execution, including Git inspection, builds, tests, type checks, linting, and formatting.
+- Delegates all commands, including Git inspection, builds, tests, type checks, linting, and formatting.
 - Requires TDD for behavior changes when automated test infrastructure already exists.
 - Model: strong reasoning model.
-- Temperature: low; `0.2` is a suitable default.
+- Temperature: low (`0.2` is a suitable default).
 
 ### Junior
 
 - Role: focused executor and shell-assisted explorer.
 - Must follow applicable `AGENTS.md` files.
-- Implements and gathers facts; does not plan or perform general research.
+- Implements and gathers facts.
+- Does not plan or conduct general research.
 - May invoke Explorer and Librarian for evidence.
 - Handles:
   - Builds, tests, type checks, linting, and formatting.
@@ -66,8 +66,9 @@
   - Behavioral or public API decisions.
   - Architecture or design decisions.
   - A choice between alternatives.
-- May apply remedies directly implied by compiler, typechecker, linter, or formatter output.
-- Model: cheaper and faster by default; stronger for complex implementation.
+- May apply fixes directly implied by compiler, typechecker, linter, or formatter output.
+- Model: cheaper and faster by default.
+- Use a stronger model for complex implementation.
 - Temperature: low.
 
 ### Explorer
@@ -91,7 +92,8 @@
   - Semantic code tools.
   - Read-only Git inspection.
   - Safe metadata, archive, bytecode, and binary inspection.
-- May execute shell commands only when confidently read-only; enforce this natively when possible and through the prompt otherwise.
+- Executes shell commands only when confidently read-only.
+- Enforce this restriction natively when possible, otherwise through the prompt.
 - Requests should specify thoroughness: quick, medium, or very thorough.
 - Model: cheaper and faster.
 - Temperature: low.
@@ -107,16 +109,16 @@
   - Propose solutions.
   - Evaluate trade-offs.
   - Modify user workspace.
-- Librarian's permissions must be a superset of Explorer's permissions in every harness, including every shell command Explorer may execute.
+- Permissions must be a superset of Explorer's in every harness, including every shell command Explorer may execute.
 - May use network, search, semantic, repository, package-manager, and shell tools.
-- May write only within a harness-specific persistent temporary cache.
+- Writes only to a harness-specific persistent temporary cache.
 - Verifies and reuses cached material before repeating network work.
-- Must not use cache operations to alter source repositories or user files.
-- Chooses smallest reliable approach by accuracy, token cost, request cost, and elapsed time.
+- Never uses cache operations to alter source repositories or user files.
+- Chooses the smallest reliable approach by accuracy, token cost, request cost, and elapsed time.
 - Callers must provide known URLs, coordinates, versions, and other research inputs.
 - Cites relevant URLs, coordinates, refs, paths, and line ranges.
 - Model: cheaper and faster.
-- Temperature: low; `0.2` is a suitable default.
+- Temperature: low (`0.2` is a suitable default).
 
 ### Delegation graph
 
@@ -124,6 +126,10 @@
 - Junior may invoke Explorer and Librarian.
 
 ## Skills
+
+- Shared skills are third-party user-scoped dependencies, never vendored into harness repositories.
+- Every harness provides standalone installation of the shared roster into the cross-harness user skill location.
+- Harness-authored command adapters may remain tracked in harness skill directories but are not part of the shared roster.
 
 ### Shared
 
@@ -147,7 +153,7 @@
 
 ## Commands
 
-- Commands run with currently selected primary agent and do not override active agent or model.
+- Commands run with the selected primary agent and do not override the active agent or model.
 
 ### OpenCode
 
