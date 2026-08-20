@@ -43,6 +43,7 @@
   - Read files.
   - Inspect primary evidence.
   - Edit files.
+- It may not use bash, MCP, LSP, or codebase search tools.
 - Delegates all commands, including Git inspection, builds, tests, type checks, linting, and formatting.
 - Requires TDD for behavior changes when automated test infrastructure already exists.
 - Model: strong reasoning model.
