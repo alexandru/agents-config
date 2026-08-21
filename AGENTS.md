@@ -8,6 +8,7 @@
 - Align shared agents, prompts, skills, commands, and behavior across `opencode/`, `copilot/`, and `codex/`.
 - Limit harness differences to required tool names, permissions, configuration syntax, cache paths, models, and invocation mechanisms.
 - Do not restate natively enforced restrictions in prompts.
+- Never edit a README without explicit user approval unless the edit is required to fix an invalid or broken reference.
 
 ## Git rules
 

@@ -130,6 +130,7 @@
 
 - Shared skills are third-party user-scoped dependencies, never vendored into harness repositories.
 - Every harness provides standalone installation of the shared roster into the cross-harness user skill location.
+- All agents may read auxiliary files from installed shared skills (for example, under `~/.agents/skills`), subject to each harness's native path-access mechanism.
 - Harness-authored command adapters may remain tracked in harness skill directories but are not part of the shared roster.
 
 ### Shared
