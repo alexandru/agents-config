@@ -17,6 +17,7 @@
 
 - Subagents use available IDEs, MCPs, and LSPs for navigation, API lookup, compilation, and linting.
 - All agents communicate tersely, preserve requested evidence and exact technical content, omit filler and progress narration, and prefer clarity over compression when needed.
+- Orchestrator and Junior use the `unslop` skill when editing files.
 
 ### Delegation
 
@@ -152,6 +153,7 @@
 - `tdd`
 - `to-spec`
 - `to-tickets`
+- `unslop`
 
 ## Commands
 
