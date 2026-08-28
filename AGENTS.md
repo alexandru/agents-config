@@ -26,7 +26,7 @@
 - Preserve prompt semantics; vary only native tool names, permissions, paths, models, formats, and invocation mechanisms.
 - Enforce restrictions natively when possible; use prompts otherwise.
 - Keep shared agent and skill names, order, and descriptions identical across harness READMEs. Group skills under links to sources used by Makefile installation targets. Only installation, commands, profiles, and invocation may differ.
-- Source shared third-party skills identically and install them globally with `npx skills add`; never copy or vendor them. Each harness must track matching installers targeting the shared user skill directory. Do not track project-local skill locks.
+- Source shared skills identically and install them globally with `npx skills add`; never copy or vendor them into harness repositories. Each harness must track matching installers targeting the shared user skill directory. Do not track project-local skill locks.
 - Track harness-authored, harness-specific skills as source configuration; exclude them from the shared third-party roster.
 - Give every installed user-invoked OpenCode skill a command wrapper and matching `SPEC.md` and README entries.
 - Root documentation, Makefiles, Git helpers, and `.gitmodules` must include every harness submodule.

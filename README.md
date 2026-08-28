@@ -8,8 +8,7 @@ All of my agents' config in one place. This repo unifies the following:
 - [skills](https://github.com/alexandru/skills)
 
 The `skills` repository contains my custom skills shared across the agent
-configurations, including `simplify`. It is separate from the third-party
-skills installed under `~/.agents/skills`.
+configurations, including `code-review` and `simplify`.
 
 ## Working with the repo
 
@@ -27,7 +26,7 @@ git submodule update --init --recursive
 
 Four submodules are included; each is its own repository.
 
-Shared third-party skills are installed once for all harnesses under
+Shared custom and third-party skills are installed once for all harnesses under
 `~/.agents/skills`:
 
 ```bash

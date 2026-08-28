@@ -183,7 +183,7 @@
 
 ## Skills
 
-- Shared skills are third-party dependencies.
+- Shared skills may be custom or third-party dependencies.
 - Shared skills are user-scoped.
 - Harness repositories must not vendor shared skills.
 - Every harness provides standalone installation of the shared roster into the cross-harness user skill location.
