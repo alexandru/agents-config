@@ -61,8 +61,8 @@
 - Delegates code review to Reviewer.
 - Delegates codebase evidence to Explorer.
 - Delegates external research to Librarian.
-- Delegates commands to Junior.
-- Delegates mechanical work to Junior.
+- Delegates builds, tests, type checks, linting, and formatting to Junior.
+- Delegates mechanical edits and fixes to Junior.
 - Asks the user rather than guessing when expected behavior is unknown.
 - Preserves todo continuity when new work arrives.
 - May directly:
@@ -71,8 +71,7 @@
   - Edit files.
 - MUST NOT use bash, MCP, or LSP.
 - SHOULD NOT use codebase search tools.
-- Delegates every command to Junior.
-- Commands include Git inspection, builds, tests, type checks, linting, and formatting.
+- Delegates read-only Git inspection to Explorer.
 - Requires TDD for behavior changes when automated test infrastructure already exists.
 - Model: strong reasoning model.
 - Temperature: low (`0.2` is a suitable default).
@@ -227,7 +226,6 @@
 - `/implement`
 - `/improve-codebase-architecture`
 - `/plan`
-- `/review`
 - `/setup-matt-pocock-skills`
 - `/simplify`
 - `/to-spec`
