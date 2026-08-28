@@ -24,26 +24,32 @@
 
 ### Prompt-authoring requirements
 
-- Rules should be short.
-- Rules should be concrete.
-- Each line should contain one rule.
+- Rules SHOULD be short.
+- Rules SHOULD be concrete.
+- Each line SHOULD contain one rule.
 
 ### Delegation
 
 - These rules apply to Orchestrator and every delegation-capable subagent.
-- Delegate work when it reduces elapsed time, model cost, or parent context.
+- Delegate aggressively.
+- Use delegation to reduce elapsed time, model cost, and parent context.
 - Balance quality, elapsed time, and model cost when planning delegation.
 - Combine sequential same-subagent tasks needing no intervening Orchestrator decision.
 - Delegate tool-heavy work.
 - Parallelize independent tasks when this reduces elapsed time.
+- Specify delegated inputs completely.
+- Specify delegated outputs precisely.
+- Do not prescribe tools.
+- Do not prescribe workflow.
+- Do not prescribe whether a subagent delegates.
 - Orchestrator retains responsibility for diagnosis, solution design, decisions, and integration.
 - Reviewer makes bounded code-review judgments against explicit criteria.
 - Junior, Explorer, and Librarian gather evidence.
 - Junior executes fully specified work.
 - Junior, Explorer, and Librarian do not make review judgments.
-- Delegated tasks should be self-contained.
-- Delegated tasks should be bounded.
-- Delegated tasks should be verifiable.
+- Delegated tasks SHOULD be self-contained.
+- Delegated tasks SHOULD be bounded.
+- Delegated tasks SHOULD be verifiable.
 
 ### Orchestrator
 
@@ -63,7 +69,8 @@
   - Read files.
   - Inspect primary evidence.
   - Edit files.
-- May not use bash, MCP, LSP, or codebase search tools.
+- MUST NOT use bash, MCP, or LSP.
+- SHOULD NOT use codebase search tools.
 - Delegates every command to Junior.
 - Commands include Git inspection, builds, tests, type checks, linting, and formatting.
 - Requires TDD for behavior changes when automated test infrastructure already exists.
@@ -140,7 +147,7 @@
 - Executes shell commands only when confidently read-only.
 - Enforce this restriction natively when supported.
 - Enforce this restriction through the prompt otherwise.
-- Requests should specify thoroughness: quick, medium, or very thorough.
+- Requests SHOULD specify thoroughness: quick, medium, or very thorough.
 - Model: cheaper and faster.
 - Temperature: low.
 
