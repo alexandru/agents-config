@@ -5,6 +5,11 @@ All of my agents' config in one place. This repo unifies the following:
 - [opencode-config](https://github.com/alexandru/opencode-config)
 - [copilot-cli-config](https://github.com/alexandru/copilot-cli-config)
 - [codex-config](https://github.com/alexandru/codex-config)
+- [skills](https://github.com/alexandru/skills)
+
+The `skills` repository contains my custom skills shared across the agent
+configurations, including `simplify`. It is separate from the third-party
+skills installed under `~/.agents/skills`.
 
 ## Working with the repo
 
@@ -20,7 +25,7 @@ If you already cloned the repository:
 git submodule update --init --recursive
 ```
 
-Three submodules are included; each is its own repository.
+Four submodules are included; each is its own repository.
 
 Shared third-party skills are installed once for all harnesses under
 `~/.agents/skills`:
