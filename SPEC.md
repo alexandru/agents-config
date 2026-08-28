@@ -98,7 +98,7 @@
 
 ### Junior
 
-- Role: focused executor and shell-assisted explorer.
+- Role: focused executor.
 - Must follow applicable `AGENTS.md` files.
 - Implements specified work.
 - Gathers facts.
@@ -110,7 +110,6 @@
   - Predictable command/fix loops.
   - Fully specified refactors and renames.
   - Repetitive edits.
-  - Codebase exploration requiring shell tools unavailable to Explorer.
 - Iterates mechanical loops until green.
 - Stops when work requires:
   - Behavioral or public API decisions.
