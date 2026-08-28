@@ -7,3 +7,6 @@
 [submodule "codex"]
 	path = codex
 	url = git@github.com:alexandru/codex-config.git
+[submodule "skills"]
+	path = skills
+	url = git@github.com:alexandru/skills.git
