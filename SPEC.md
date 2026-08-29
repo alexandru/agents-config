@@ -44,7 +44,7 @@
 - Orchestrator performs code review and correctness judgments.
 - Specialist agents gather evidence; Orchestrator interprets it.
 - Junior executes fully specified work.
-- Junior handles tools that modify state, including files and network requests.
+- Junior handles fully specified work that modifies state beyond direct file editing.
 - Junior, Explorer, and Librarian do not perform code review or make correctness judgments.
 - Orchestrator may self-invoke for requirements demanding parallelism only when the prompt is explicit.
 - Orchestrator self-delegation is limited to one level.
@@ -61,10 +61,10 @@
 - May invoke another Orchestrator for requirements demanding parallelism only when the prompt is explicit.
 - Reviews and integrates delegated work.
 - Delegates codebase evidence to Explorer.
-- Delegates external research to Librarian.
+- Delegates external evidence unavailable from the conversation or local codebase to Librarian.
 - Delegates builds, tests, type checks, linting, and formatting to Junior.
 - Delegates mechanical edits and fixes to Junior.
-- Delegates tools that modify state to Junior.
+- Delegates fully specified work that modifies state beyond direct file editing to Junior.
 - Self-delegates only one level.
 - An Orchestrator subagent must not invoke another Orchestrator subagent.
 - Asks the user rather than guessing when expected behavior is unknown.
@@ -93,7 +93,7 @@
   - Building, testing, typechecking, linting, and formatting commands.
   - Mechanical edits and fixes, including fix loops with predictable remedies.
   - Fully specified refactors, renames, and repetitive edits.
-  - Use of tools that modify state, including files and network requests.
+  - Fully specified work that modifies state beyond direct file editing.
 - Iterates mechanical loops until green.
 - Stops when work requires:
   - Behavioral or public API decisions.
