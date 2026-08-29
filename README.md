@@ -3,7 +3,7 @@
 All of my agents' config in one place. This repo unifies the following:
 
 - [opencode-config](https://github.com/alexandru/opencode-config)
-- [copilot-cli-config](https://github.com/alexandru/copilot-cli-config)
+- [copilot-config](https://github.com/alexandru/copilot-config)
 - [codex-config](https://github.com/alexandru/codex-config)
 - [skills](https://github.com/alexandru/skills)
 

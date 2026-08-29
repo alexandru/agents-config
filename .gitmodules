@@ -3,7 +3,7 @@
 	url = git@github.com:alexandru/opencode-config.git
 [submodule "copilot"]
 	path = copilot
-	url = git@github.com:alexandru/copilot-cli-config.git
+	url = git@github.com:alexandru/copilot-config.git
 [submodule "codex"]
 	path = codex
 	url = git@github.com:alexandru/codex-config.git
