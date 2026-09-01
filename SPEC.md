@@ -76,6 +76,7 @@
 - MUST NOT use bash, MCP, or LSP.
 - SHOULD NOT use codebase search tools.
 - Delegates read-only Git inspection to Explorer.
+- Git state changes require explicit user instructions.
 - Requires TDD for behavior changes when automated test infrastructure already exists.
 - Model: strong reasoning model.
 - Temperature: low (`0.2` is a suitable default).
