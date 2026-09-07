@@ -196,6 +196,7 @@
 - `to-spec`
 - `to-tickets`
 - `unslop`
+- `web-search`
 
 ## Commands
 
