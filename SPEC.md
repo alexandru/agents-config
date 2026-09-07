@@ -73,7 +73,7 @@
   - Read files.
   - Inspect primary evidence.
   - Edit files.
-- MUST NOT use bash, MCP, or LSP.
+- MUST NOT use bash, MCP, LSP, or web fetching.
 - SHOULD NOT use codebase search tools.
 - Delegates read-only Git inspection to Explorer.
 - Git state changes require explicit user instructions.
@@ -86,6 +86,7 @@
 - Role: focused executor.
 - Must follow applicable `AGENTS.md` files.
 - Implements specified work.
+- May use web fetching.
 - Gathers facts.
 - Does not plan.
 - Does not conduct general research.
@@ -124,6 +125,7 @@
   - Modify state.
 - May use:
   - File reading and search.
+  - Web fetching.
   - Semantic code tools.
   - Read-only Git inspection.
   - Safe metadata, archive, bytecode, and binary inspection.
@@ -147,7 +149,7 @@
   - Modify user workspace.
 - Permissions must be a superset of Explorer's in every harness.
 - Permissions must include every shell command Explorer may execute.
-- May use network, search, semantic, repository, package-manager, and shell tools.
+- May use network, web fetching, search, semantic, repository, package-manager, and shell tools.
 - Writes only to a harness-specific persistent temporary cache.
 - Verifies cached material before reuse.
 - Reuses matching cached material before repeating network work.
