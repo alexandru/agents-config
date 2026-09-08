@@ -1,12 +1,12 @@
 [submodule "opencode"]
 	path = opencode
-	url = git@github.com:alexandru/opencode-config.git
+	url = https://github.com/alexandru/agents-config.git
 [submodule "copilot"]
 	path = copilot
-	url = git@github.com:alexandru/copilot-config.git
+	url = https://github.com/alexandru/copilot-config.git
 [submodule "codex"]
 	path = codex
-	url = git@github.com:alexandru/codex-config.git
+	url = https://github.com/alexandru/codex-config.git
 [submodule "skills"]
 	path = skills
-	url = git@github.com:alexandru/skills.git
+	url = https://github.com/alexandru/skills.git
