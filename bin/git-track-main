@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
+
+git -C "$ROOT" submodule foreach --recursive '
+  if git show-ref --verify --quiet refs/heads/main; then
+    git switch main
+  elif git show-ref --verify --quiet refs/remotes/origin/main; then
+    git switch --track -c main origin/main
+  else
+    echo "No local main branch or origin/main found in $displaypath" >&2
+    exit 1
+  fi
+
+  git branch --set-upstream-to=origin/main main
+'
