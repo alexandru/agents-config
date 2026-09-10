@@ -2,19 +2,19 @@
 
 ## Repository scope
 
-- Configures OpenCode, Copilot CLI, and Codex.
+- Configures OpenCode, Copilot CLI, Codex, and Pi.
 - `skills/` contains custom skills shared across the agent configurations,
   including `simplify`. Keep these separate from installed third-party skills.
 - `SPEC.md` governs shared behavior.
 - Keep `SPEC.md` short and high-level: behavior and boundaries, not prompt wording.
-- Align shared agents, prompts, skills, commands, and behavior across `opencode/`, `copilot/`, and `codex/`.
+- Align shared agents, prompts, skills, commands, and behavior across `opencode/`, `copilot/`, `codex/`, and `pi/`.
 - Limit harness differences to required tool names, permissions, configuration syntax, cache paths, models, and invocation mechanisms.
 - Do not restate natively enforced restrictions in prompts.
 - Never edit a README without explicit user approval unless the edit is required to fix an invalid or broken reference.
 
 ## Git rules
 
-- `opencode/`, `copilot/`, and `codex/` are Git submodules.
+- `opencode/`, `copilot/`, `codex/`, and `pi/` are Git submodules.
 - Run submodule Git commands from its worktree, for example `git -C opencode status`.
 - Check parent and all submodule statuses and diffs.
 - Never commit or push; leave changes uncommitted for review.
