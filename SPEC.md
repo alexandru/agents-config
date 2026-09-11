@@ -202,10 +202,6 @@
 
 ## Commands
 
-- Commands run with the selected primary agent.
-- Commands do not override the active agent.
-- Commands do not override the active model.
-
 ### OpenCode
 
 - `/grill-me`
@@ -214,6 +210,7 @@
 - `/implement`
 - `/improve-codebase-architecture`
 - `/plan`
+- `/review`
 - `/setup-matt-pocock-skills`
 - `/simplify`
 - `/to-spec`
