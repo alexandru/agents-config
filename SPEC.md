@@ -224,3 +224,16 @@
 - `/grill-me`
 - `/handoff`
 - `/plan-implementation`
+
+### Pi
+
+- `/grill-me`
+- `/grill-with-docs`
+- `/handoff`
+- `/implement`
+- `/improve-codebase-architecture`
+- `/plan`
+- `/setup-matt-pocock-skills`
+- `/simplify`
+- `/to-spec`
+- `/to-tickets`
