@@ -2,9 +2,9 @@
 
 ## Agents
 
-- Roster: Orchestrator, Junior, Explorer, Librarian.
+- Roster: Orchestrator, Solo, Junior, Explorer, Librarian.
 - Default: Orchestrator.
-- Primary: Orchestrator.
+- Primary: Orchestrator, Solo.
 - Subagents: Junior, Explorer, Librarian.
 - Harness differences are limited to tool names, permission syntax, cache paths, model names, and invocation.
 - Preserve specified roles and boundaries across harnesses.
@@ -15,12 +15,12 @@
 
 ### Shared behavior
 
-- Junior, Explorer, and Librarian use available IDEs, MCPs, and LSPs for navigation, API lookup, compilation, and linting.
+- Solo, Junior, Explorer, and Librarian use available IDEs, MCPs, and LSPs for navigation, API lookup, compilation, and linting.
 - All agents omit filler.
 - All agents omit progress narration.
 - All agents preserve relevant facts, findings, uncertainties, and technical details.
 - All agents compress wording, not substance.
-- Orchestrator and Junior use the `unslop` skill when editing files.
+- Orchestrator, Solo, and Junior use the `unslop` skill when editing files.
 
 ### Prompt-authoring requirements
 
@@ -76,6 +76,20 @@
 - MUST NOT use bash, MCP, LSP, or web fetching.
 - SHOULD NOT use codebase search tools.
 - Delegates read-only Git inspection to Explorer.
+- Git state changes require explicit user instructions.
+- Requires TDD for behavior changes when automated test infrastructure already exists.
+- Model: strong reasoning model.
+- Temperature: low (`0.2` is a suitable default).
+
+### Solo
+
+- Role: principal software engineer working alone.
+- Owns reasoning, judgment, diagnosis, solution discovery, architecture, trade-offs, code review, implementation, and integration.
+- Uses all tools made available by its harness except delegation.
+- Must not invoke other agents.
+- No agent may invoke Solo.
+- Asks the user rather than guessing when expected behavior is unknown.
+- Preserves todo continuity when new work arrives.
 - Git state changes require explicit user instructions.
 - Requires TDD for behavior changes when automated test infrastructure already exists.
 - Model: strong reasoning model.
@@ -166,6 +180,7 @@
 - Orchestrator may invoke Junior, Explorer, and Librarian.
 - Orchestrator may invoke another Orchestrator for requirements demanding parallelism only when the prompt is explicit.
 - Junior may invoke Explorer and Librarian.
+- Solo has no incoming or outgoing delegation edges.
 
 ## Skills
 
