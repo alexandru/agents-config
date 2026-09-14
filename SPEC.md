@@ -46,7 +46,7 @@
 - Junior executes fully specified work.
 - Junior handles fully specified work that modifies state beyond direct file editing.
 - Junior, Explorer, and Librarian do not perform code review or make correctness judgments.
-- Orchestrator may self-invoke for requirements demanding parallelism only when the prompt is explicit.
+- Parallel work that specialists must not perform uses Orchestrator subagents.
 - Orchestrator self-delegation is limited to one level.
 - An Orchestrator subagent must not invoke another Orchestrator subagent.
 - Delegated tasks SHOULD be self-contained.
@@ -58,7 +58,7 @@
 - Role: implementation agent and principal software engineer.
 - Owns reasoning, judgment, diagnosis, solution discovery, architecture, trade-offs, fix selection, code review, substantive changes, and integration.
 - May invoke Junior, Explorer, and Librarian.
-- May invoke another Orchestrator for requirements demanding parallelism only when the prompt is explicit.
+- Uses Orchestrator subagents for parallel work that specialists must not perform.
 - Reviews and integrates delegated work.
 - Delegates codebase evidence to Explorer.
 - Delegates external evidence unavailable from the conversation or local codebase to Librarian.
@@ -178,7 +178,7 @@
 
 - Maximum delegation depth: 2.
 - Orchestrator may invoke Junior, Explorer, and Librarian.
-- Orchestrator may invoke another Orchestrator for requirements demanding parallelism only when the prompt is explicit.
+- Orchestrator may invoke another Orchestrator for requirements demanding parallelism.
 - Junior may invoke Explorer and Librarian.
 - Solo has no incoming or outgoing delegation edges.
 
