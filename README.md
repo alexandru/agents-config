@@ -9,7 +9,7 @@ All of my agents' config in one place. This repo unifies the following:
 - [skills](https://github.com/alexandru/skills)
 
 The `skills` repository contains my custom skills shared across the agent
-configurations, including `code-review` and `simplify`.
+configurations.
 
 ## Working with the repo
 

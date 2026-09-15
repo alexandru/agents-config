@@ -131,12 +131,14 @@
   - Local API examples and tests.
 - Returns facts for caller interpretation.
 - Must not:
+  - Perform code review or assign findings or severity.
   - Diagnose bugs.
   - Infer intent.
   - Judge correctness.
   - Choose defective behavior.
   - Recommend fixes.
   - Modify state.
+- Rejects code-review requests rather than partially performing them.
 - May use:
   - File reading and search.
   - Web fetching.
@@ -199,6 +201,7 @@
 - `cellar`
 - `codebase-design`
 - `code-review`
+- `code-reviewing`
 - `diagnosing-bugs`
 - `domain-modeling`
 - `grill-with-docs`
@@ -233,6 +236,7 @@
 
 ### Copilot
 
+- `/code-review`
 - `/grill-me`
 - `/handoff`
 - `/plan-implementation`
