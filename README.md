@@ -8,8 +8,8 @@ This repository unifies my agents configurations, plugins and skills:
     - [codex](https://github.com/alexandru/codex-config)
     - [pi](https://github.com/alexandru/pi-config)
 - Plugins:
-    - [opencode-shell-safety](https://github.com/alexandru/opencode-shell-safety)
-    - [opencode-brave-search](https://github.com/alexandru/opencode-brave-search)
+    - [opencode-shell-safety](https://github.com/alexandru/opencode-shell-safety) ([npm](https://www.npmjs.com/package/opencode-shell-safety))
+    - [opencode-brave-search](https://github.com/alexandru/opencode-brave-search) ([npm](https://www.npmjs.com/package/opencode-brave-websearch))
 - [Skills](https://github.com/alexandru/skills)
 
 ## Working with the repo
