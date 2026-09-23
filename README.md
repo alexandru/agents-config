@@ -1,6 +1,6 @@
 # Agents Config
 
-This repository unifies my agents configurations, plugins and skills:
+This repository unifies several projects as git submodules:
 
 - Harness configurations:
     - [opencode](https://github.com/alexandru/opencode-config)
