@@ -7,6 +7,7 @@ All of my agents' config in one place. This repo unifies the following:
 - [codex-config](https://github.com/alexandru/codex-config)
 - [pi-config](https://github.com/alexandru/pi-config)
 - [skills](https://github.com/alexandru/skills)
+- [plugins/opencode-shell-safety](https://github.com/alexandru/opencode-shell-safety)
 
 The `skills` repository contains my custom skills shared across the agent
 configurations.
@@ -25,7 +26,7 @@ If you already cloned the repository:
 git submodule update --init --recursive
 ```
 
-Five submodules are included; each is its own repository.
+Six submodules are included; each is its own repository.
 
 Shared custom and third-party skills are installed once for all harnesses under
 `~/.agents/skills`:

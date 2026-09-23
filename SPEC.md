@@ -36,7 +36,7 @@
 - Balance quality, elapsed time, and model cost when planning delegation.
 - Combine sequential same-subagent tasks needing no intervening Orchestrator decision.
 - Delegate tool-heavy work.
-- Parallelize independent tasks when this reduces elapsed time.
+- Parallelize independent tasks.
 - Specify delegated inputs completely.
 - Specify delegated outputs precisely.
 - Delegation SHOULD NOT micromanage specialist tools or workflow.
