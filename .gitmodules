@@ -16,3 +16,6 @@
 [submodule "plugins/opencode-shell-safety"]
 	path = plugins/opencode-shell-safety
 	url = git@github.com:alexandru/opencode-shell-safety.git
+[submodule "plugins/opencode-brave-search"]
+	path = plugins/opencode-brave-search
+	url = git@github.com:alexandru/opencode-brave-search.git
