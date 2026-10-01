@@ -171,6 +171,7 @@
 - Reuses matching cached material before repeating network work.
 - Never uses cache operations to alter source repositories or user files.
 - Chooses the smallest reliable approach by accuracy, token cost, request cost, and elapsed time.
+- Lists its research options in cost order, cheapest first.
 - Callers must provide known URLs, coordinates, versions, and other research inputs.
 - Cites relevant URLs, coordinates, refs, paths, and line ranges.
 - Model: cheaper and faster.
