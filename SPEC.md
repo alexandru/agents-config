@@ -214,6 +214,7 @@
 - `setup-matt-pocock-skills`
 - `simplify`
 - `tdd`
+- `teach`
 - `to-spec`
 - `to-tickets`
 - `unslop`
@@ -232,6 +233,7 @@
 - `/review`
 - `/setup-matt-pocock-skills`
 - `/simplify`
+- `/teach`
 - `/to-spec`
 - `/to-tickets`
 
@@ -252,5 +254,6 @@
 - `/plan`
 - `/setup-matt-pocock-skills`
 - `/simplify`
+- `/teach`
 - `/to-spec`
 - `/to-tickets`
