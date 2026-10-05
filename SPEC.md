@@ -16,10 +16,8 @@
 ### Shared behavior
 
 - Solo, Junior, Explorer, and Librarian use available IDEs, MCPs, and LSPs for navigation, API lookup, compilation, and linting.
-- All agents omit filler.
-- All agents omit progress narration.
+- Orchestrator and Solo use the same communication style.
 - All agents preserve relevant facts, findings, uncertainties, and technical details.
-- All agents compress wording, not substance.
 - Orchestrator, Solo, and Junior use the `unslop` skill when editing files.
 
 ### Prompt-authoring requirements
