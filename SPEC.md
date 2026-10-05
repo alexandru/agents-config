@@ -208,7 +208,6 @@
 - `handoff`
 - `implement`
 - `improve-codebase-architecture`
-- `resolving-merge-conflicts`
 - `setup-matt-pocock-skills`
 - `simplify`
 - `tdd`
