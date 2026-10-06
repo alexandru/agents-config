@@ -213,6 +213,7 @@
 - `improve-codebase-architecture`
 - `setup-matt-pocock-skills`
 - `simplify`
+- `simplifying`
 - `tdd`
 - `teach`
 - `to-spec`
