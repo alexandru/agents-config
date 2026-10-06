@@ -18,7 +18,10 @@
 - Solo, Junior, Explorer, and Librarian use available IDEs, MCPs, and LSPs for navigation, API lookup, compilation, and linting.
 - Orchestrator and Solo use the same communication style.
 - All agents preserve relevant facts, findings, uncertainties, and technical details.
-- Orchestrator, Solo, and Junior use the `unslop` skill when editing files.
+- Orchestrator, Solo, and Junior preserve existing wording unless rephrasing is requested or required by the change.
+- Orchestrator, Solo, and Junior do not document deletions, omitted work, or small changes in code comments or the README, except in the project's designated change-history locations.
+- Orchestrator, Solo, and Junior do not add code comments describing what the code used to do.
+- Orchestrator, Solo, and Junior document design invariants only when clear and not visible in code signatures.
 
 ### Prompt-authoring requirements
 
