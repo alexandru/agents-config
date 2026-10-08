@@ -206,20 +206,25 @@
 - `code-reviewing`
 - `diagnosing-bugs`
 - `domain-modeling`
+- `grill-me`
 - `grill-with-docs`
 - `grilling`
 - `handoff`
 - `implement`
 - `improve-codebase-architecture`
 - `setup-matt-pocock-skills`
+- `simplicity`
 - `simplify`
-- `simplifying`
 - `tdd`
 - `teach`
 - `to-spec`
 - `to-tickets`
 - `unslop`
 - `web-search`
+
+### Exclusions
+
+- OpenCode uses the `opencode-brave-websearch` plugin for web search and does not install `web-search`.
 
 ## Commands
 
