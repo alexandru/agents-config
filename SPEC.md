@@ -18,6 +18,8 @@
 - Solo, Junior, Explorer, and Librarian use available IDEs, MCPs, and LSPs for navigation, API lookup, compilation, and linting.
 - Orchestrator and Solo use the same communication style.
 - All agents preserve relevant facts, findings, uncertainties, and technical details.
+- Judge operations by their substantive effects.
+- Incidental runtime bookkeeping is not a substantive mutation.
 - Orchestrator, Solo, and Junior preserve existing wording unless rephrasing is requested or required by the change.
 - Orchestrator, Solo, and Junior do not document deletions, omitted work, or small changes in code comments or the README, except in the project's designated change-history locations.
 - Orchestrator, Solo, and Junior do not add code comments describing what the code used to do.
@@ -225,6 +227,10 @@
 ### Exclusions
 
 - OpenCode uses the `opencode-brave-websearch` plugin for web search and does not install `web-search`.
+
+### Harness-specific skills
+
+- Copilot alone installs `alexandru/skills`'s `mcp-access` for MCP access when native MCP tools are unavailable or unsupported.
 
 ## Commands
 
