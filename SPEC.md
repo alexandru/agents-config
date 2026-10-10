@@ -50,8 +50,8 @@
 - Junior handles fully specified work that modifies state beyond direct file editing.
 - Junior, Explorer, and Librarian do not perform code review or make correctness judgments.
 - Parallel work that specialists must not perform uses Orchestrator subagents.
-- Orchestrator self-delegation is limited to one level.
-- An Orchestrator subagent must not invoke another Orchestrator subagent.
+- Orchestrator SHOULD delegate work needing untainted, impartial judgment, such as reviews, to Orchestrator subagents.
+- Orchestrator self-delegation depth is unlimited.
 - Delegated tasks SHOULD be self-contained.
 - Delegated tasks SHOULD be bounded.
 - Delegated tasks SHOULD be verifiable.
@@ -68,8 +68,8 @@
 - Delegates builds, tests, type checks, linting, and formatting to Junior.
 - Delegates mechanical edits and fixes to Junior.
 - Delegates fully specified work that modifies state beyond direct file editing to Junior.
-- Self-delegates only one level.
-- An Orchestrator subagent must not invoke another Orchestrator subagent.
+- Should delegate work needing untainted, impartial judgment, such as reviews, to Orchestrator subagents.
+- Self-delegates at any depth.
 - Asks the user rather than guessing when expected behavior is unknown.
 - Preserves todo continuity when new work arrives.
 - May directly:
@@ -182,9 +182,9 @@
 
 ### Delegation graph
 
-- Maximum delegation depth: 2.
 - Orchestrator may invoke Junior, Explorer, and Librarian.
-- Orchestrator may invoke another Orchestrator for requirements demanding parallelism.
+- Orchestrator may invoke another Orchestrator for requirements demanding parallelism or untainted, impartial judgment.
+- Orchestrator nesting depth is unlimited.
 - Junior may invoke Explorer and Librarian.
 - Solo has no incoming or outgoing delegation edges.
 
