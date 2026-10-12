@@ -111,6 +111,7 @@
 - May execute commands that modify local or remote state, subject to configured permissions.
 - May update state with `git`, `gh`, or `az` when explicitly requested.
 - Must preserve history: no force-pushes, history rewrites, or remote branch or tag deletions.
+- May discard uncommitted changes.
 - May use web fetching.
 - Gathers facts.
 - Does not plan.
@@ -148,7 +149,7 @@
   - Judge correctness.
   - Choose defective behavior.
   - Recommend fixes.
-  - Modify state.
+  - Make intentional or substantive state changes; incidental runtime bookkeeping from permitted operations is not a violation.
 - Rejects code-review requests rather than partially performing them.
 - May use:
   - File reading and search.
@@ -177,7 +178,7 @@
 - Permissions must be a superset of Explorer's in every harness.
 - Permissions must include every shell command Explorer may execute.
 - May use network, web fetching, search, semantic, repository, package-manager, and shell tools.
-- Writes only to a harness-specific persistent temporary cache.
+- Makes intentional changes only to a harness-specific persistent temporary cache; incidental runtime bookkeeping outside it is permitted and never authorizes substantive changes.
 - Verifies cached material before reuse.
 - Reuses matching cached material before repeating network work.
 - Never uses cache operations to alter source repositories or user files.
