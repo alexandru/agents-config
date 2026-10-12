@@ -5,6 +5,7 @@ set -euo pipefail
 ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 
 git -C "$ROOT" submodule foreach --recursive '
+  set -e
   if git show-ref --verify --quiet refs/heads/main; then
     git switch main
   elif git show-ref --verify --quiet refs/remotes/origin/main; then

@@ -1,5 +1,10 @@
 # Spec
 
+## Setup
+
+- Setup scripts and documented command sequences stop when a required command fails.
+- Harnesses that share configuration and working directories disable untracked-file status locally after setup.
+
 ## Agents
 
 - Roster: Orchestrator, Solo, Junior, Explorer, Librarian.
