@@ -214,9 +214,9 @@
 - `handoff`
 - `implement`
 - `improve-codebase-architecture`
+- `refine`
+- `refinements`
 - `setup-matt-pocock-skills`
-- `simplicity`
-- `simplify`
 - `tdd`
 - `teach`
 - `to-spec`
@@ -242,9 +242,9 @@
 - `/implement`
 - `/improve-codebase-architecture`
 - `/plan`
+- `/refine`
 - `/review`
 - `/setup-matt-pocock-skills`
-- `/simplify`
 - `/teach`
 - `/to-spec`
 - `/to-tickets`
@@ -264,8 +264,8 @@
 - `/implement`
 - `/improve-codebase-architecture`
 - `/plan`
+- `/refine`
 - `/setup-matt-pocock-skills`
-- `/simplify`
 - `/teach`
 - `/to-spec`
 - `/to-tickets`

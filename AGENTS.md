@@ -3,8 +3,7 @@
 ## Repository scope
 
 - Configures OpenCode, Copilot CLI, Codex, and Pi.
-- `skills/` contains custom skills shared across the agent configurations,
-  including `simplify`. Keep these separate from installed third-party skills.
+- `skills/` contains custom 1st party skills shared across the agent configurations.
 - `SPEC.md` governs shared behavior.
 - Keep `SPEC.md` short and high-level: behavior and boundaries, not prompt wording.
 - Align shared agents, prompts, skills, commands, and behavior across `opencode/`, `copilot/`, `codex/`, and `pi/`.
