@@ -108,6 +108,9 @@
 - Role: focused executor.
 - Must follow applicable `AGENTS.md` files.
 - Implements specified work.
+- May execute commands that modify local or remote state, subject to configured permissions.
+- May update state with `git`, `gh`, or `az` when explicitly requested.
+- Must preserve history: no force-pushes, history rewrites, or remote branch or tag deletions.
 - May use web fetching.
 - Gathers facts.
 - Does not plan.
