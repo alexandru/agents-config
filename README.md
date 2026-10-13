@@ -6,7 +6,6 @@ This repository unifies several projects as git submodules:
     - [opencode](https://github.com/alexandru/opencode-config)
     - [copilot](https://github.com/alexandru/copilot-config)
     - [codex](https://github.com/alexandru/codex-config)
-    - [pi](https://github.com/alexandru/pi-config)
 - Plugins:
     - [opencode-shell-safety](https://github.com/alexandru/opencode-shell-safety) ([npm](https://www.npmjs.com/package/opencode-shell-safety))
     - [opencode-brave-search](https://github.com/alexandru/opencode-brave-search) ([npm](https://www.npmjs.com/package/opencode-brave-websearch))

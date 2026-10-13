@@ -130,7 +130,7 @@
 - Gathers facts.
 - Does not plan.
 - Does not conduct general research.
-- May invoke Explorer and Librarian for evidence.
+- May invoke only Explorer and Librarian for evidence.
 - Handles:
   - Building, testing, typechecking, linting, and formatting commands.
   - Mechanical edits and fixes, including fix loops with predictable remedies.
@@ -208,7 +208,7 @@
 - Orchestrator may invoke Analyst, Junior, Explorer, and Librarian.
 - Orchestrator has no incoming delegation edges.
 - Analyst may invoke Explorer and Librarian.
-- Junior may invoke Explorer and Librarian.
+- Junior may invoke only Explorer and Librarian.
 - Solo has no incoming or outgoing delegation edges.
 
 ## Skills
@@ -264,7 +264,6 @@
 - `/handoff`
 - `/implement`
 - `/improve-codebase-architecture`
-- `/plan`
 - `/refine`
 - `/review`
 - `/setup-matt-pocock-skills`
@@ -277,18 +276,3 @@
 - `/code-review`
 - `/grill-me`
 - `/handoff`
-- `/plan-implementation`
-
-### Pi
-
-- `/grill-me`
-- `/grill-with-docs`
-- `/handoff`
-- `/implement`
-- `/improve-codebase-architecture`
-- `/plan`
-- `/refine`
-- `/setup-matt-pocock-skills`
-- `/teach`
-- `/to-spec`
-- `/to-tickets`
