@@ -56,6 +56,7 @@
 - Junior, Explorer, and Librarian do not perform code review or make correctness judgments.
 - Parallel work that specialists must not perform uses Orchestrator subagents.
 - Orchestrator SHOULD delegate work needing untainted, impartial judgment, such as reviews, to Orchestrator subagents.
+- Reviews and other requests requiring fresh-eyes MUST be minimal and untainted by prior analysis, findings, or proposed solutions.
 - Orchestrator self-delegation depth is unlimited.
 - Delegated tasks SHOULD be self-contained.
 - Delegated tasks SHOULD be bounded.
