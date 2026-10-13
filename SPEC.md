@@ -7,14 +7,15 @@
 
 ## Agents
 
-- Roster: Orchestrator, Solo, Junior, Explorer, Librarian.
+- Roster: Orchestrator, Solo, Analyst, Junior, Explorer, Librarian.
 - Default: Orchestrator.
 - Primary: Orchestrator, Solo.
-- Subagents: Junior, Explorer, Librarian.
+- Subagents: Analyst, Junior, Explorer, Librarian.
 - Harness differences are limited to tool names, permission syntax, cache paths, model names, and invocation.
 - Preserve specified roles and boundaries across harnesses.
 - Enforce restrictions with native permissions when possible.
 - Enforce unsupported restrictions through prompts.
+- Do not register Orchestrator as a subagent when the main-agent setup provides its role.
 - Disable built-ins that conflict with configured agents.
 - Never invoke built-ins as substitutes for configured agents.
 
@@ -48,16 +49,15 @@
 - Specify delegated inputs completely.
 - Specify delegated outputs precisely.
 - Delegation SHOULD NOT micromanage specialist tools or workflow.
-- Orchestrator owns reasoning, judgment, diagnosis, solutions, code review, substantive decisions, and integration.
-- Orchestrator performs code review and correctness judgments.
-- Specialist agents gather evidence; Orchestrator interprets it.
+- Orchestrator owns implementation decisions and integration.
+- Analyst exercises independent judgment on code and evidence.
+- Specialist agents gather evidence for caller interpretation.
 - Junior executes fully specified work.
 - Junior handles fully specified work that modifies state beyond direct file editing.
 - Junior, Explorer, and Librarian do not perform code review or make correctness judgments.
-- Parallel work that specialists must not perform uses Orchestrator subagents.
-- Orchestrator SHOULD delegate work needing untainted, impartial judgment, such as reviews, to Orchestrator subagents.
+- Orchestrator MUST delegate all code reviews and code analysis requiring fresh context or fresh eyes to Analyst.
 - Reviews and other requests requiring fresh-eyes MUST be minimal and untainted by prior analysis, findings, or proposed solutions.
-- Orchestrator self-delegation depth is unlimited.
+- Orchestrator must not invoke another Orchestrator.
 - Delegated tasks SHOULD be self-contained.
 - Delegated tasks SHOULD be bounded.
 - Delegated tasks SHOULD be verifiable.
@@ -65,17 +65,15 @@
 ### Orchestrator
 
 - Role: implementation agent and principal software engineer.
-- Owns reasoning, judgment, diagnosis, solution discovery, architecture, trade-offs, fix selection, code review, substantive changes, and integration.
-- May invoke Junior, Explorer, and Librarian.
-- Uses Orchestrator subagents for parallel work that specialists must not perform.
+- Owns reasoning, judgment, diagnosis, solution discovery, architecture, trade-offs, fix selection, substantive changes, and integration.
+- May invoke Analyst, Junior, Explorer, and Librarian.
 - Reviews and integrates delegated work.
 - Delegates codebase evidence to Explorer.
 - Delegates external evidence unavailable from the conversation or local codebase to Librarian.
 - Delegates builds, tests, type checks, linting, and formatting to Junior.
 - Delegates mechanical edits and fixes to Junior.
 - Delegates fully specified work that modifies state beyond direct file editing to Junior.
-- Should delegate work needing untainted, impartial judgment, such as reviews, to Orchestrator subagents.
-- Self-delegates at any depth.
+- Must delegate all code reviews and code analysis requiring fresh context or fresh eyes to Analyst.
 - Asks the user rather than guessing when expected behavior is unknown.
 - Preserves todo continuity when new work arrives.
 - May directly:
@@ -102,6 +100,21 @@
 - Git state changes require explicit user instructions.
 - Requires TDD for behavior changes when automated test infrastructure already exists.
 - Model: strong reasoning model.
+- Temperature: low (`0.2` is a suitable default).
+
+### Analyst
+
+- Role: read-only advisor.
+- Reads code and presented evidence.
+- Exercises judgment, analyzes correctness, diagnoses problems, evaluates trade-offs, and advises on architecture and refinements.
+- Returns findings and recommendations.
+- May invoke only Explorer and Librarian for evidence.
+- Delegates codebase searches and read-only Git inspection to Explorer.
+- Delegates external research to Librarian.
+- Must not make substantive state changes or execute shell commands.
+- Must not use todo tools, MCP, LSP, or web fetching directly.
+- Separates verified facts, inference, and uncertainty.
+- Model: same strong reasoning model as Orchestrator or stronger.
 - Temperature: low (`0.2` is a suitable default).
 
 ### Junior
@@ -192,9 +205,9 @@
 
 ### Delegation graph
 
-- Orchestrator may invoke Junior, Explorer, and Librarian.
-- Orchestrator may invoke another Orchestrator for requirements demanding parallelism or untainted, impartial judgment.
-- Orchestrator nesting depth is unlimited.
+- Orchestrator may invoke Analyst, Junior, Explorer, and Librarian.
+- Orchestrator has no incoming delegation edges.
+- Analyst may invoke Explorer and Librarian.
 - Junior may invoke Explorer and Librarian.
 - Solo has no incoming or outgoing delegation edges.
 
