@@ -221,6 +221,7 @@
 - Harness-native path-access controls still apply.
 - Harness-authored command adapters may remain tracked in harness skill directories.
 - Harness-authored command adapters are not part of the shared skill roster.
+- Recommend `grill-with-docs` for plan and design interviews.
 
 ### Shared
 
@@ -270,9 +271,3 @@
 - `/teach`
 - `/to-spec`
 - `/to-tickets`
-
-### Copilot
-
-- `/code-review`
-- `/grill-me`
-- `/handoff`
