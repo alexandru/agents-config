@@ -49,3 +49,13 @@
 - Run the full checklist before handoff or release, after harness CLI or skill-installer upgrades, and monthly while active.
 - Compare all harness rosters, prompts, permissions, shared skill installers, harness-authored skills, READMEs, Makefiles, ignore rules, and root integration files.
 - Record or fix all drift; never preserve accidental differences.
+
+## Agent skills
+
+### Issue tracker
+
+Issues are tracked in GitHub Issues via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Domain docs
+
+Single-context: a root `GLOSSARY.md` and `docs/adr/`. See `docs/agents/domain.md`.
