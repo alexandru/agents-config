@@ -62,7 +62,6 @@
 - Junior executes fully specified work.
 - Junior handles fully specified work that modifies state beyond direct file editing.
 - Junior, Explorer, and Librarian do not perform code review or make correctness judgments.
-- Orchestrator SHOULD delegate code reviews to Analyst.
 - Orchestrator MUST delegate code analysis requiring fresh context or fresh eyes to Analyst.
 - Orchestrator MUST relay findings intact and state disagreements separately.
 - Reviews and other requests requiring fresh-eyes MUST be minimal and untainted by prior analysis, findings, or proposed solutions.
@@ -85,7 +84,6 @@
 - Delegates builds, tests, type checks, linting, and formatting to Junior.
 - Delegates mechanical edits and fixes to Junior.
 - Delegates fully specified work that modifies state beyond direct file editing to Junior.
-- Should delegate code reviews to Analyst.
 - Must delegate code analysis requiring fresh context or fresh eyes to Analyst.
 - Asks the user rather than guessing when expected behavior is unknown.
 - Preserves todo continuity when new work arrives.
