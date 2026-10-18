@@ -3,6 +3,7 @@
 ## Setup
 
 - Setup scripts and documented command sequences stop when a required command fails.
+- Default setup installs Cellar.
 - Harnesses that share configuration and working directories disable untracked-file status locally after setup.
 
 ## Agents
@@ -45,22 +46,25 @@
 ### Delegation
 
 - These rules apply to Orchestrator and every delegation-capable subagent.
-- Delegate aggressively.
 - Use delegation to reduce elapsed time, model cost, and parent context.
 - Balance quality, elapsed time, and model cost when planning delegation.
 - Combine sequential same-subagent tasks needing no intervening Orchestrator decision.
 - Delegate tool-heavy work.
 - Parallelize independent tasks.
+- Preserve the user's scope, paths, refs, baselines, exclusions, and acceptance criteria in delegated tasks.
 - Specify delegated inputs completely.
 - Specify delegated outputs precisely.
 - Delegation SHOULD NOT micromanage specialist tools or workflow.
 - Orchestrator owns implementation decisions and integration.
+- Orchestrator may delegate judgment only when the recipient's role explicitly permits it.
 - Analyst exercises independent judgment on code and evidence.
-- Specialist agents gather evidence for caller interpretation.
+- Junior, Explorer, and Librarian gather evidence for caller interpretation.
 - Junior executes fully specified work.
 - Junior handles fully specified work that modifies state beyond direct file editing.
 - Junior, Explorer, and Librarian do not perform code review or make correctness judgments.
-- Orchestrator MUST delegate all code reviews and code analysis requiring fresh context or fresh eyes to Analyst.
+- Orchestrator SHOULD delegate code reviews to Analyst.
+- Orchestrator MUST delegate code analysis requiring fresh context or fresh eyes to Analyst.
+- Orchestrator MUST relay findings intact and state disagreements separately.
 - Reviews and other requests requiring fresh-eyes MUST be minimal and untainted by prior analysis, findings, or proposed solutions.
 - Orchestrator must not invoke another Orchestrator.
 - Delegated tasks SHOULD be self-contained.
@@ -72,24 +76,28 @@
 - Role: implementation agent and principal software engineer.
 - Owns reasoning, judgment, diagnosis, solution discovery, architecture, trade-offs, fix selection, substantive changes, and integration.
 - May invoke Analyst, Junior, Explorer, and Librarian.
-- Reviews and integrates delegated work.
-- Delegates codebase evidence to Explorer.
+- Delegates only when there is an identified need.
+- Acts directly when the change is small and clear.
+- Delegates to optimize costs or time, including broad searches, tool-heavy work, research, and parallelism.
+- Inspects and integrates delegated work.
+- Delegates broad codebase searches and behavior traces to Explorer.
 - Delegates external evidence unavailable from the conversation or local codebase to Librarian.
 - Delegates builds, tests, type checks, linting, and formatting to Junior.
 - Delegates mechanical edits and fixes to Junior.
 - Delegates fully specified work that modifies state beyond direct file editing to Junior.
-- Must delegate all code reviews and code analysis requiring fresh context or fresh eyes to Analyst.
+- Should delegate code reviews to Analyst.
+- Must delegate code analysis requiring fresh context or fresh eyes to Analyst.
 - Asks the user rather than guessing when expected behavior is unknown.
 - Preserves todo continuity when new work arrives.
 - May directly:
-  - Read files.
+  - Read known files.
+  - Perform narrow searches.
   - Inspect primary evidence.
-  - Edit files.
+  - Make edits.
 - MUST NOT use bash, MCP, LSP, or web fetching.
-- SHOULD NOT use codebase search tools.
 - Delegates read-only Git inspection to Explorer.
 - Git state changes require explicit user instructions.
-- Requires TDD for behavior changes when automated test infrastructure already exists.
+- SHOULD practice TDD for behavior changes when automated test infrastructure already exists.
 - Model: strong reasoning model.
 - Temperature: low (`0.2` is a suitable default).
 
@@ -103,7 +111,7 @@
 - Asks the user rather than guessing when expected behavior is unknown.
 - Preserves todo continuity when new work arrives.
 - Git state changes require explicit user instructions.
-- Requires TDD for behavior changes when automated test infrastructure already exists.
+- SHOULD practice TDD for behavior changes when automated test infrastructure already exists.
 - Model: strong reasoning model.
 - Temperature: low (`0.2` is a suitable default).
 
@@ -141,7 +149,7 @@
 - Handles:
   - Building, testing, typechecking, linting, and formatting commands.
   - Mechanical edits and fixes, including fix loops with predictable remedies.
-  - Fully specified refactors, renames, and repetitive edits.
+  - Fully specified refactors, renames, and repetitive edits, including necessary local exploration.
   - Fully specified work that modifies state beyond direct file editing.
 - Iterates mechanical loops until green.
 - Stops when work requires:
@@ -238,6 +246,8 @@
 - `codebase-design`
 - `code-review`
 - `code-reviewing`
+- `code-refine`
+- `code-refinements`
 - `diagnosing-bugs`
 - `domain-modeling`
 - `grill-me`
@@ -246,14 +256,11 @@
 - `handoff`
 - `implement`
 - `improve-codebase-architecture`
-- `refine`
-- `refinements`
 - `setup-matt-pocock-skills`
 - `tdd`
 - `teach`
 - `to-spec`
 - `to-tickets`
-- `unslop`
 - `web-search`
 
 ### Exclusions
@@ -273,7 +280,7 @@
 - `/handoff`
 - `/implement`
 - `/improve-codebase-architecture`
-- `/refine`
+- `/code-refine`
 - `/review`
 - `/setup-matt-pocock-skills`
 - `/teach`
