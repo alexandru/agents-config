@@ -1,5 +1,5 @@
 # Delegate for cost and context efficiency
 
-Delegate bounded grunt work to cheaper models to reduce total cost while preserving quality. Keep Orchestrator long-lived and protect its context from tool-heavy work so it stays compaction-free and effective for longer; work directly when delegation overhead outweighs the benefit.
+Delegate complex tasks to specialists to reduce cost and protect Orchestrator's context. Work directly when the change is small and clear. Orchestrator interprets evidence and makes decisions.
 
-Only Orchestrator may receive delegated work requiring judgment. It may recursively invoke another Orchestrator when instructions require parallelism for work specialists cannot perform, or when workflow instructions require independent judgment. Keep independent-review handoffs untainted by the caller's prior reasoning. Delegation is not exclusively a way to use cheaper models.
+Delegate to Orchestrator when the instructions require parallelism for work specialists cannot perform, and only when explicitly instructed by the user. Limit this to one level: an Orchestrator sub-agent must not invoke another Orchestrator sub-agent. Keep independent-review handoffs untainted by the caller's prior reasoning.
