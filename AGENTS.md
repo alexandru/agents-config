@@ -3,6 +3,7 @@
 ## Repository scope
 
 - Configures OpenCode, Copilot CLI, and Codex.
+- `codex/AGENTS.md` is a delivered artifact: the main-agent prompt shipped by that sub-project, not guidelines for developing it. Treat it as source configuration; this root `AGENTS.md` governs development of that sub-project.
 - `skills/` contains custom 1st party skills shared across the agent configurations.
 - `opencode/` is the source of truth for harness alignment unless the user's prompt specifies otherwise.
 - Architectural decisions and intentional alignment exceptions live in `docs/adr/`.
