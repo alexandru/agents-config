@@ -19,3 +19,6 @@
 [submodule "plugins/opencode-session-todo"]
 	path = plugins/opencode-session-todo
 	url = git@github.com:alexandru/opencode-session-todo.git
+[submodule "pi"]
+	path = pi
+	url = git@github.com:alexandru/pi-config.git

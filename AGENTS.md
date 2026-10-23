@@ -2,26 +2,26 @@
 
 ## Repository scope
 
-- Configures OpenCode, Copilot CLI, and Codex.
-- `codex/AGENTS.md` is a delivered artifact: the main-agent prompt shipped by that sub-project, not guidelines for developing it. Treat it as source configuration; this root `AGENTS.md` governs development of that sub-project.
+- Configures OpenCode, Copilot CLI, Codex, and Pi.
+- `codex/AGENTS.md` and `pi/AGENTS.md` are delivered artifacts: the main-agent prompt shipped by those sub-projects, not guidelines for developing them. Treat them as source configuration; this root `AGENTS.md` governs development of those sub-projects.
 - `skills/` contains custom 1st party skills shared across the agent configurations.
 - `opencode/` is the source of truth for harness alignment unless the user's prompt specifies otherwise.
 - Architectural decisions and intentional alignment exceptions live in `docs/adr/`.
-- Align shared agents, prompts, skills, commands, and behavior across `opencode/`, `copilot/`, and `codex/`.
+- Align shared agents, prompts, skills, commands, and behavior across `opencode/`, `copilot/`, `codex/`, and `pi/`.
 - Preserve intent across harnesses; adapt to their capabilities rather than requiring identical configuration.
 - Do not restate natively enforced restrictions in prompts.
 - Never edit a README without explicit user approval unless the edit is required to fix an invalid or broken reference.
 
 ## Git rules
 
-- `opencode/`, `copilot/`, and `codex/` are Git submodules.
+- `opencode/`, `copilot/`, `codex/`, and `pi/` are Git submodules.
 - Run submodule Git commands from its worktree, for example `git -C opencode status`.
 - Check parent and all submodule statuses and diffs.
 - Never commit or push; leave changes uncommitted for review.
 
 ## Repository invariants
 
-- Keep ADRs focused on intent, decisions, and rationale; leave implementation details in harness configuration.
+- Keep ADRs focused on intent, decisions, and rationale: one decision per ADR, no version numbers, transient state, or operational details — those live in harness configuration or conversation.
 - Align agent rosters, role boundaries, delegation, and shared skills with the source of truth unless an ADR records an exception.
 - Preserve prompt semantics using each harness's available features; record intentional behavioral exceptions in ADRs.
 - Enforce restrictions natively when possible; use prompts otherwise.
