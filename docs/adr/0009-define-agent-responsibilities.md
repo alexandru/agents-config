@@ -1,9 +1,9 @@
 # Define agent responsibilities
 
-Orchestrator is a main agent only, never a delegation target. It owns implementation decisions and integration.
+Orchestrator owns judgment: diagnosis, design, trade-offs, code review, implementation decisions, and integration. It has full tool access and works directly or delegates. It is both a main agent and a delegation target, so instructions that require independent judgment, such as fresh-eyes reviews, are served without a separate reviewer role.
 
 Solo works directly. Delegation is optional and limited to other Solo instances, preserving its independence from specialist agents. Other agents must not delegate to Solo.
 
-Invoke Analyst when the user requests fresh-eyes code analysis. Analyst is a read-only advisor and the only specialist sub-agent permitted to judge code: exercising independent judgment is its purpose, not merely gathering evidence for Orchestrator.
+Junior gathers local and external evidence and executes specified work. It does not plan, diagnose, review, or judge correctness, beyond obvious fixes such as those following from compiler output, and it does not delegate.
 
-Explorer and Librarian gather factual evidence without judging code, diagnosing bugs, or recommending solutions. Junior handles specified execution. These boundaries keep evidence gathering and execution separate from judgment without preventing user-requested independent analysis.
+Merging evidence gathering and execution into Junior, and dropping read-only specialists and a read-only reviewer, trades native read-only enforcement for a smaller roster that is simpler to delegate to.
