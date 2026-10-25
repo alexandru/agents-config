@@ -5,7 +5,7 @@ Shared language for aligning agent harness configurations.
 ## Language
 
 **Harness**:
-A program that runs an agent loop and supplies its tools, permissions, sub-agents, and skills, such as OpenCode, Copilot CLI, Codex, or Pi.
+A program that runs an agent loop and supplies its tools, permissions, sub-agents, and skills, such as OpenCode, Copilot CLI, Codex, Pi, or Claude Code.
 _Avoid_: agent system, tool, client
 
 **Harness configuration**:

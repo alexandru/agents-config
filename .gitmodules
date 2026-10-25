@@ -22,3 +22,6 @@
 [submodule "pi"]
 	path = pi
 	url = git@github.com:alexandru/pi-config.git
+[submodule "claude"]
+	path = claude
+	url = git@github.com:alexandru/claude-config.git

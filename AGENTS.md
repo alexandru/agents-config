@@ -2,19 +2,19 @@
 
 ## Repository scope
 
-- Configures OpenCode, Copilot CLI, Codex, and Pi.
+- Configures OpenCode, Copilot CLI, Codex, Pi, and Claude Code.
 - `codex/AGENTS.md` and `pi/AGENTS.md` are delivered artifacts: the main-agent prompt shipped by those sub-projects, not guidelines for developing them. Treat them as source configuration; this root `AGENTS.md` governs development of those sub-projects.
 - `skills/` contains custom 1st party skills shared across the agent configurations.
 - `opencode/` is the source of truth for harness alignment unless the user's prompt specifies otherwise.
 - Architectural decisions and intentional alignment exceptions live in `docs/adr/`.
-- Align shared agents, prompts, skills, commands, and behavior across `opencode/`, `copilot/`, `codex/`, and `pi/`.
+- Align shared agents, prompts, skills, commands, and behavior across `opencode/`, `copilot/`, `codex/`, `pi/`, and `claude/`.
 - Preserve intent across harnesses; adapt to their capabilities rather than requiring identical configuration.
 - Do not restate natively enforced restrictions in prompts.
 - Never edit a README without explicit user approval unless the edit is required to fix an invalid or broken reference.
 
 ## Git rules
 
-- `opencode/`, `copilot/`, `codex/`, and `pi/` are Git submodules.
+- `opencode/`, `copilot/`, `codex/`, `pi/`, and `claude/` are Git submodules.
 - Run submodule Git commands from its worktree, for example `git -C opencode status`.
 - Check parent and all submodule statuses and diffs.
 - Do not commit or push without explicit user permission; otherwise leave changes uncommitted for review.
