@@ -32,7 +32,7 @@
 - Root documentation, Makefiles, Git helpers, and `.gitmodules` must include every harness submodule.
 - Track source configuration; ignore generated files, credentials, sessions, logs, caches, and other runtime state.
 - Remove all source and generated references to removed agents, skills, commands, and settings.
-- Harness `bin/` scripts with logic are single-file Python: pinned dependencies in PEP 723 inline metadata, run via `pipx run`, invoked through a symlink, statically typed and `mypy --strict` clean.
+- Harness `bin/` scripts with logic are single-file Python: pinned dependencies in PEP 723 inline metadata, run via `pipx run` when they have dependencies and via `python3` otherwise, invoked through a symlink, statically typed and `mypy --strict` clean.
 - Expected failures in Python `bin/` scripts raise one clear domain error; users never see a traceback.
 
 ## Change checklist
