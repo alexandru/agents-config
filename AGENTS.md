@@ -17,7 +17,7 @@
 - `opencode/`, `copilot/`, `codex/`, and `pi/` are Git submodules.
 - Run submodule Git commands from its worktree, for example `git -C opencode status`.
 - Check parent and all submodule statuses and diffs.
-- Never commit or push; leave changes uncommitted for review.
+- Do not commit or push without explicit user permission; otherwise leave changes uncommitted for review.
 
 ## Repository invariants
 
