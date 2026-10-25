@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if (( $# != 1 )); then
+  echo "Usage: git-checkout <branch>" >&2
+  exit 1
+fi
+
+ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
+SUBMODULES=(opencode copilot codex pi skills plugins/opencode-shell-safety plugins/opencode-brave-search plugins/opencode-session-todo)
+BRANCH=$1
+
+git -C "$ROOT" fetch --quiet origin
+git -C "$ROOT" switch "$BRANCH"
+git -C "$ROOT" submodule update --init --recursive
+
+for submodule in "${SUBMODULES[@]}"; do
+  repository="$ROOT/$submodule"
+  git -C "$repository" fetch --quiet origin
+
+  if ! git -C "$repository" show-ref --verify --quiet "refs/heads/$BRANCH" \
+    && ! git -C "$repository" show-ref --verify --quiet "refs/remotes/origin/$BRANCH"; then
+    echo "Keeping $submodule at its recorded commit: no $BRANCH branch"
+    continue
+  fi
+
+  # The recorded commit is what the parent's branch expects.
+  recorded=$(git -C "$repository" rev-parse HEAD)
+  git -C "$repository" switch --quiet "$BRANCH"
+  if [[ $(git -C "$repository" rev-parse HEAD) != "$recorded" ]]; then
+    echo "WARN: $submodule $BRANCH differs from the commit recorded by the parent" >&2
+  fi
+done
