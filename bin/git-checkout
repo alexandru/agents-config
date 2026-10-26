@@ -16,6 +16,10 @@ git -C "$ROOT" switch "$BRANCH"
 git -C "$ROOT" submodule update --init --recursive
 
 for submodule in "${SUBMODULES[@]}"; do
+  if ! git -C "$ROOT" ls-files --error-unmatch -- "$submodule" >/dev/null 2>&1; then
+    continue
+  fi
+
   repository="$ROOT/$submodule"
   git -C "$repository" fetch --quiet origin
 
