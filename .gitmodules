@@ -10,15 +10,9 @@
 [submodule "skills"]
 	path = skills
 	url = git@github.com:alexandru/skills.git
-[submodule "plugins/opencode-shell-safety"]
-	path = plugins/opencode-shell-safety
-	url = git@github.com:alexandru/opencode-shell-safety.git
 [submodule "plugins/opencode-brave-search"]
 	path = plugins/opencode-brave-search
 	url = git@github.com:alexandru/opencode-brave-search.git
-[submodule "plugins/opencode-session-todo"]
-	path = plugins/opencode-session-todo
-	url = git@github.com:alexandru/opencode-session-todo.git
 [submodule "pi"]
 	path = harnesses/pi
 	url = git@github.com:alexandru/pi-config.git
