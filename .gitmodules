@@ -1,11 +1,11 @@
 [submodule "opencode"]
-	path = opencode
+	path = harnesses/opencode
 	url = git@github.com:alexandru/opencode-config.git
 [submodule "copilot"]
-	path = copilot
+	path = harnesses/copilot
 	url = git@github.com:alexandru/copilot-config.git
 [submodule "codex"]
-	path = codex
+	path = harnesses/codex
 	url = git@github.com:alexandru/codex-config.git
 [submodule "skills"]
 	path = skills
@@ -20,8 +20,8 @@
 	path = plugins/opencode-session-todo
 	url = git@github.com:alexandru/opencode-session-todo.git
 [submodule "pi"]
-	path = pi
+	path = harnesses/pi
 	url = git@github.com:alexandru/pi-config.git
 [submodule "claude"]
-	path = claude
+	path = harnesses/claude
 	url = git@github.com:alexandru/claude-config.git

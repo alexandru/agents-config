@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
-SUBMODULES=(opencode copilot codex pi claude skills plugins/opencode-shell-safety plugins/opencode-brave-search plugins/opencode-session-todo)
+SUBMODULES=(harnesses/opencode harnesses/copilot harnesses/codex harnesses/pi harnesses/claude skills plugins/opencode-shell-safety plugins/opencode-brave-search plugins/opencode-session-todo)
 
 git -C "$ROOT" pull
 
