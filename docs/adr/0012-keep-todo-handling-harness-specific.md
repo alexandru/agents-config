@@ -1,3 +1,3 @@
 # Keep todo handling harness-specific
 
-OpenCode denies todo tracking to Junior because its todo plugin keeps one list per agent session, not per parent session, so a Junior list would never reach the user. That reason is specific to the plugin, so todo handling is not aligned across harnesses: other harnesses neither mirror the denial nor count differences in todo tools as drift.
+Each harness tracks todos with its native todo tool, and those tools differ in how lists are scoped and shown to the user. Todo handling is therefore not aligned across harnesses: no agent is denied todo tracking for alignment's sake, and differences in todo tools or todo-specific prompt sections do not count as drift.
