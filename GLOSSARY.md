@@ -30,3 +30,6 @@ The independent agent: it exercises judgment and works directly, without delegat
 **Junior**:
 The execution and evidence agent: it gathers local and external evidence and carries out specified work, without owning judgment or delegating.
 _Avoid_: Explorer, Librarian
+
+**Agent reminder**:
+A non-blocking instruction that recalls an agent's prompt obligations while leaving judgment and action selection with that agent.
