@@ -33,3 +33,9 @@ _Avoid_: Explorer, Librarian
 
 **Agent reminder**:
 A non-blocking instruction that recalls an agent's prompt obligations while leaving judgment and action selection with that agent.
+
+**Reminder interval**:
+The span over which one reminder rule accumulates measurements and observed events, beginning anew when that rule resets.
+
+**Event condition**:
+A reminder condition satisfied when its named event has occurred during the current reminder interval.
