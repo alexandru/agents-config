@@ -19,3 +19,6 @@
 [submodule "claude"]
 	path = harnesses/claude
 	url = git@github.com:alexandru/claude-config.git
+[submodule "harnesses/codex-cloud"]
+	path = harnesses/codex-cloud
+	url = git@github.com:alexandru/codex-cloud-config.git

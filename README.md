@@ -6,6 +6,7 @@ This repository unifies several projects as git submodules:
     - [opencode](https://github.com/alexandru/opencode-config)
     - [copilot](https://github.com/alexandru/copilot-config)
     - [codex](https://github.com/alexandru/codex-config)
+    - [codex-cloud](https://github.com/alexandru/codex-cloud-config)
     - [pi](https://github.com/alexandru/pi-config)
     - [claude](https://github.com/alexandru/claude-config)
 - Plugins:
