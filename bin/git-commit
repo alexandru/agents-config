@@ -8,7 +8,7 @@ if (( $# == 0 )); then
 fi
 
 ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
-SUBMODULES=(harnesses/opencode harnesses/copilot harnesses/codex harnesses/codex-cloud harnesses/pi harnesses/claude skills plugins/opencode-brave-search)
+SUBMODULES=(harnesses/opencode harnesses/copilot harnesses/codex harnesses/pi harnesses/claude skills plugins/opencode-brave-search)
 MESSAGE="$*"
 
 commit_staged() {
