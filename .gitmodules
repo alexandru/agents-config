@@ -19,3 +19,6 @@
 [submodule "claude"]
 	path = harnesses/claude
 	url = git@github.com:alexandru/claude-config.git
+[submodule "mistral-vibe"]
+	path = harnesses/mistral-vibe
+	url = git@github.com:alexandru/mistral-vibe-config.git

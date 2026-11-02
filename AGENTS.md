@@ -2,19 +2,19 @@
 
 ## Repository scope
 
-- Configures OpenCode, Copilot CLI, Codex, Pi, and Claude Code.
-- `harnesses/codex/AGENTS.md` and `harnesses/pi/AGENTS.md` are delivered artifacts: the main-agent prompts shipped by those sub-projects, not guidelines for developing them. Treat them as source configuration; this root `AGENTS.md` governs development of those sub-projects.
+- Configures OpenCode, Copilot CLI, Codex, Pi, Claude Code, and Mistral Vibe.
+- `harnesses/codex/AGENTS.md`, `harnesses/pi/AGENTS.md`, and prompts in `harnesses/mistral-vibe/` are delivered artifacts: the main-agent prompts shipped by those sub-projects, not guidelines for developing them. Treat them as source configuration; this root `AGENTS.md` governs development of those sub-projects.
 - `skills/` contains custom 1st party skills shared across the agent configurations.
 - `harnesses/opencode/` is the source of truth for harness alignment unless the user's prompt specifies otherwise.
 - Architectural decisions and intentional alignment exceptions live in `docs/adr/`.
-- Align shared agents, prompts, skills, commands, and behavior across `harnesses/opencode/`, `harnesses/copilot/`, `harnesses/codex/`, `harnesses/pi/`, and `harnesses/claude/`.
+- Align shared agents, prompts, skills, commands, and behavior across `harnesses/opencode/`, `harnesses/copilot/`, `harnesses/codex/`, `harnesses/pi/`, `harnesses/claude/`, and `harnesses/mistral-vibe/`.
 - Preserve intent across harnesses; adapt to their capabilities rather than requiring identical configuration.
 - Do not restate natively enforced restrictions in prompts.
 - Never edit a README without explicit user approval unless the edit is required to fix an invalid or broken reference.
 
 ## Git rules
 
-- `harnesses/opencode/`, `harnesses/copilot/`, `harnesses/codex/`, `harnesses/pi/`, and `harnesses/claude/` are Git submodules.
+- `harnesses/opencode/`, `harnesses/copilot/`, `harnesses/codex/`, `harnesses/pi/`, `harnesses/claude/`, and `harnesses/mistral-vibe/` are Git submodules.
 - Run submodule Git commands from its worktree, for example `git -C harnesses/opencode status`.
 - Check parent and all submodule statuses and diffs.
 - Do not commit or push without explicit user permission; otherwise leave changes uncommitted for review.
